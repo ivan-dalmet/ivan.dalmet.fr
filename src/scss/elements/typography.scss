@@ -1,0 +1,19 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $color-dark;
+}
+
+a {
+  color: $color-primary;
+  text-decoration-skip: ink;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    &:active {
+      color: $color-dark;
+    }
+  }
+}

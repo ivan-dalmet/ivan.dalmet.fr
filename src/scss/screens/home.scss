@@ -1,0 +1,75 @@
+.s-home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: $color-light;
+
+  &__intro {
+
+    > * {
+      margin: 0;
+    }
+
+    div {
+      font-size: 1.6rem;
+      font-weight: 200;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+    }
+
+    h2 {
+      margin-top: .4rem;
+      font-size: 1.65rem;
+      font-weight: normal;
+    }
+
+    h3 {
+      margin-top: .4rem;
+      font-size: 1.05rem;
+      font-weight: normal;
+
+      a {
+        font-size: 1.4em;
+      }
+    }
+
+    @media only screen and (min-width: $mq-md) {
+      div {
+        font-size: 2rem;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      h2 {
+        font-size: 2.52rem;
+      }
+
+      h3 {
+        font-size: 1.58rem;
+      }
+    }
+  }
+
+  &__contact {
+    margin-top: 2rem;
+
+    p {
+      margin: 0 0 .5rem;
+      font-size: .9rem;
+      color: rgba($color-dark, .6);
+    }
+
+    @media only screen and (min-width: $mq-md) {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
