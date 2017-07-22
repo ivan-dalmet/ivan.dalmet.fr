@@ -35,18 +35,6 @@ path.scss = {
     output: path.folder.output + '/css'
 };
 
-path.js = {
-    input:  [path.folder.input + '/js/libs/*.js', path.folder.input + '/js/**/*.js'],
-    watch:  path.folder.input + '/js/**/*.js',
-    output: path.folder.output + '/js'
-};
-
-path.assets = {
-    input:  path.folder.input + '/assets/**/*',
-    watch:  path.folder.input + '/assets/**/*',
-    output: path.folder.output + '/assets'
-};
-
 path.html = {
     input:  path.folder.input + '/html/**/*',
     watch:  path.folder.input + '/html/**/*',
@@ -60,20 +48,19 @@ path.html = {
 /*
   Default task
  */
-gulp.task('default', ['clean'], function () {
-    gulp.start(['build:ui']);
-});
+gulp.task('default', ['build']);
 
 /*
   Watch task
  */
-gulp.task('watch', ['build:ui', 'scss:watch', 'js:watch', 'assets:watch', 'html:watch']);
-
+gulp.task('watch', ['build', 'scss:watch', 'html:watch']);
 
 /*
-  Build ui task
+  Build
  */
-gulp.task('build:ui', ['scss', 'js', 'assets', 'html']);
+gulp.task('build', ['clean'], function () {
+    gulp.start(['html']);
+});
 
 /*
   Clean task
@@ -104,50 +91,7 @@ gulp.task('scss', function () {
   SCSS _watch_ task
  */
 gulp.task('scss:watch', function () {
-    gulp.watch(path.scss.watch, ['scss']);
-});
-
-/* ------------------------- *\
-    SCRIPTS tasks
-\* ------------------------- */
-
-/*
-  JS task
- */
-gulp.task('js', function () {
-    return gulp.src(path.js.input)
-        .pipe($.plumber().on('error', $.util.log))
-        .pipe($.if(isDev, $.sourcemaps.init()))
-        .pipe($.concat('app.js'))
-        .pipe($.if(isProd, $.uglify()))
-        .pipe($.if(isDev, $.sourcemaps.write()))
-        .pipe(gulp.dest(path.js.output))
-});
-
-/*
-  JS _watch_ task
- */
-gulp.task('js:watch', function () {
-    gulp.watch(path.js.watch, ['js']);
-});
-
-/* ------------------------- *\
-    ASSETS tasks
-\* ------------------------- */
-
-/*
-  Assets task
- */
-gulp.task('assets', function () {
-    return gulp.src(path.assets.input)
-        .pipe(gulp.dest(path.assets.output))
-});
-
-/*
-  Assets _watch_ task
- */
-gulp.task('assets:watch', function () {
-    gulp.watch(path.assets.watch, ['assets']);
+    gulp.watch(path.scss.watch, ['html']);
 });
 
 /* ------------------------- *\
@@ -157,8 +101,14 @@ gulp.task('assets:watch', function () {
 /*
   HTML task
  */
-gulp.task('html', function () {
+gulp.task('html', ['scss'], function () {
     return gulp.src(path.html.input)
+        .pipe($.inject(gulp.src([path.scss.output + '**/*.css']), {
+            transform: function (filePath, file) {
+                return '<style>' + file.contents.toString('utf8') + '</style>';
+            }
+        }))
+        .pipe($.htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(path.html.output))
 });
 
