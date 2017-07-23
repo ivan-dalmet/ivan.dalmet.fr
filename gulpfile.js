@@ -41,6 +41,12 @@ path.html = {
     output: path.folder.output
 };
 
+path.rootFiles = {
+    input:  path.folder.input + '/root-files/**/*',
+    watch:  path.folder.input + '/root-files/**/*',
+    output: path.folder.output
+};
+
 /* ------------------------- *\
     Common tasks
 \* ------------------------- */
@@ -53,13 +59,13 @@ gulp.task('default', ['build']);
 /*
   Watch task
  */
-gulp.task('watch', ['build', 'scss:watch', 'html:watch']);
+gulp.task('watch', ['build', 'scss:watch', 'html:watch', 'rootFiles:watch']);
 
 /*
   Build
  */
 gulp.task('build', ['clean'], function () {
-    gulp.start(['html']);
+    gulp.start(['html', 'rootFiles']);
 });
 
 /*
@@ -119,4 +125,21 @@ gulp.task('html:watch', function () {
     gulp.watch(path.html.watch, ['html']);
 });
 
+/* ------------------------- *\
+    Copy root files tasks
+\* ------------------------- */
 
+/*
+  Root files task
+ */
+gulp.task('rootFiles', function () {
+    return gulp.src(path.rootFiles.input)
+        .pipe(gulp.dest(path.rootFiles.output));
+});
+
+/*
+  Root files _watch_ task
+ */
+gulp.task('rootFiles:watch', function () {
+    gulp.watch(path.rootFiles.watch, ['rootFiles']);
+});
