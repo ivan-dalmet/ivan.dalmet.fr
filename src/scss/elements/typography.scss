@@ -11,9 +11,5 @@ a {
   &:hover,
   &:focus {
     text-decoration: none;
-
-    &:active {
-      color: $color-dark;
-    }
   }
 }

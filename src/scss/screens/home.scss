@@ -5,10 +5,16 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: $color-light;
+  color: darken($color-light, 8%);
+  background: linear-gradient(45deg, darken($color-primary, 10%) 0%, lighten($color-primary, 10%) 100%);
+
+  a,
+  strong,
+  h1 {
+    color: $color-light;
+  }
 
   &__intro {
-
     > * {
       margin: 0;
     }
@@ -63,7 +69,6 @@
     p {
       margin: 0 0 .5rem;
       font-size: .9rem;
-      color: rgba($color-dark, .6);
     }
 
     @media only screen and (min-width: $mq-md) {
