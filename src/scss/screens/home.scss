@@ -14,33 +14,35 @@
     color: $color-light;
   }
 
-  &__intro {
+  &__main {
     > * {
       margin: 0;
     }
 
     div {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 200;
     }
 
     h1 {
       font-size: 2.6rem;
+      font-weight: normal;
     }
 
     h2 {
-      margin-top: .4rem;
-      font-size: 1.65rem;
-      font-weight: normal;
+      margin-top: .2rem;
+      font-size: 1.63rem;
+      font-weight: 300;
     }
 
     h3 {
-      margin-top: .4rem;
-      font-size: 1.05rem;
-      font-weight: normal;
+      margin-top: .2rem;
+      font-size: 1.02rem;
+      font-weight: 300;
 
       a {
         font-size: 1.4em;
+        font-weight: normal;
       }
     }
 
@@ -54,12 +56,34 @@
       }
 
       h2 {
-        font-size: 2.52rem;
+        font-size: 2.48rem;
       }
 
       h3 {
-        font-size: 1.58rem;
+        font-size: 1.55rem;
       }
+    }
+  }
+
+  &__side {
+    margin-top: 2rem;
+    padding: 1.5rem 1rem;
+    border-top: 1px solid rgba($color-dark, .2);
+    border-bottom: 1px solid rgba($color-dark, .2);
+    font-weight: 300;
+    font-size: .95rem;
+
+    @media only screen and (min-width: $mq-md) {
+      font-size: 1.42rem;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .e-emulate-a {
+      color: $color-light;
+      font-weight: normal;
     }
   }
 
@@ -68,12 +92,12 @@
 
     p {
       margin: 0 0 .5rem;
-      font-size: .9rem;
+      font-size: .8rem;
     }
 
     @media only screen and (min-width: $mq-md) {
       p {
-        font-size: 1rem;
+        font-size: .9rem;
       }
     }
   }

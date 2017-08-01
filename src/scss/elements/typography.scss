@@ -3,8 +3,11 @@ body {
   color: $color-dark;
 }
 
-a {
-  color: $color-primary;
+a,
+.e-emulate-a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: underline;
   text-decoration-skip: ink;
   outline: none;
 
@@ -12,4 +15,9 @@ a {
   &:focus {
     text-decoration: none;
   }
+}
+
+a.e-clean-a {
+  cursor: default;
+  text-decoration: none;
 }
