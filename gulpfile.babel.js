@@ -36,9 +36,9 @@ path.html = {
     output: path.folder.output
 };
 
-path.rootFiles = {
-    input:  path.folder.input + '/root-files/**/*',
-    watch:  path.folder.input + '/root-files/**/*',
+path.statics = {
+    input:  path.folder.input + '/statics/**/*',
+    watch:  path.folder.input + '/statics/**/*',
     output: path.folder.output
 };
 
@@ -69,19 +69,20 @@ export const buildHtml = () => src(path.html.input)
 export const watchHtml = () => watch(path.html.watch, buildHtml);
 
 // -------------------------
-//    Copy root files tasks
+//    Copy statics files tasks
 // -------------------------
 
-export const buildRootFiles = () => src(path.rootFiles.input)
-  .pipe(dest(path.rootFiles.output));
+export const buildStatics = () => src(path.statics.input)
+  .pipe(dest(path.statics.output));
 
-export const watchRootFiles = () => watch(path.rootFiles.watch, buildRootFiles);
+export const watchStatics = () => watch(path.statics.watch, buildStatics);
 
 // -------------------------
 //    Global tasks
 // -------------------------
 
 export const clean = () => del(path.folder.output);
+export const cleanTmp = () => del(path.scss.output);
 export const devServer = () => src(path.folder.output)
   .pipe($webserver({
     livereload: true,
@@ -92,14 +93,15 @@ export const build = series(
   clean,
   parallel(
     series(buildScss, buildHtml),
-    buildRootFiles
-  )
+    buildStatics
+  ),
+  cleanTmp,
 );
 
 export const dev = series(
   build,
   devServer,
-  parallel(watchScss, watchHtml, watchRootFiles),
+  parallel(watchScss, watchHtml, watchStatics),
 );
 
 export default build;

@@ -4,8 +4,10 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   min-height: 100vh;
+  background: $color-accent;
 }
 
 img:not(.as--rwd-disabled) {
@@ -18,12 +20,6 @@ img:not(.as--rwd-disabled) {
 img {
   vertical-align: middle;
   border: 0;
-
-  &.as--bordered {
-    overflow: hidden;
-    outline: 1px solid rgba(0, 0, 0, .1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
-  }
 }
 
 button {
@@ -34,6 +30,6 @@ button {
 
 hr {
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
-  margin: 30px 0;
+  border-bottom: rem(1) solid rgba(0, 0, 0, .1);
+  margin: rem(30) 0;
 }

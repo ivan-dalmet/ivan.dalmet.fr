@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Geomanist';
+  src:
+    url($font-path + '/Geomanist-Book-Webfont/geomanist-book-webfont.woff2') format('woff2'),
+    url($font-path + '/Geomanist-Book-Webfont/geomanist-book-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geomanist';
+  src:
+    url($font-path + '/Geomanist-Bold-Webfont/geomanist-bold-webfont.woff2') format('woff2'),
+    url($font-path + '/Geomanist-Bold-Webfont/geomanist-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+

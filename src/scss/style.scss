@@ -1,17 +1,29 @@
-/* ------------------------- *\
-    Settings
-\* ------------------------- */
+// -------------------------
+//    Functions
+// -------------------------
+@import "_functions/rem";
+
+// -------------------------
+//    Settings
+// -------------------------
 @import "_settings/media-queries";
 @import "_settings/colors";
+@import "_settings/typography";
 
-/* ------------------------- *\
-    Elements
-\* ------------------------- */
+// -------------------------
+//    Fonts
+// -------------------------
+@import "@fonts/geomanist";
+@import "@fonts/salome";
+
+// -------------------------
+//    Elements
+// -------------------------
 @import "elements/normalize";
 @import "elements/misc";
 @import "elements/typography";
 
-/* ------------------------- *\
-    Screens
-\* ------------------------- */
+// -------------------------
+//    Screens
+// -------------------------
 @import "screens/home";

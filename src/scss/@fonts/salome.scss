@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Salome';
+  src:
+    url($font-path + '/Salome-Italic-Webfont/salome_italic-webfont.woff2') format('woff2'),
+    url($font-path + '/Salome-Italic-Webfont/salome_italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
