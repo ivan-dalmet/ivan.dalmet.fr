@@ -10,6 +10,7 @@ import $cssnano from 'gulp-cssnano';
 import $htmlmin from 'gulp-htmlmin';
 import $inject from 'gulp-inject';
 import $sass from 'gulp-sass';
+import $webserver from 'gulp-webserver';
 
 $sass.compiler = nodeSass;
 
@@ -81,6 +82,11 @@ export const watchRootFiles = () => watch(path.rootFiles.watch, buildRootFiles);
 // -------------------------
 
 export const clean = () => del(path.folder.output);
+export const devServer = () => src(path.folder.output)
+  .pipe($webserver({
+    livereload: true,
+    open: true,
+  }));
 
 export const build = series(
   clean,
@@ -92,7 +98,8 @@ export const build = series(
 
 export const dev = series(
   build,
-  parallel(watchScss, watchHtml, watchRootFiles)
+  devServer,
+  parallel(watchScss, watchHtml, watchRootFiles),
 );
 
 export default build;
