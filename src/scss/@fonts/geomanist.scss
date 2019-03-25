@@ -5,6 +5,7 @@
     url($font-path + '/Geomanist-Book-Webfont/geomanist-book-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -14,5 +15,6 @@
     url($font-path + '/Geomanist-Bold-Webfont/geomanist-bold-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
