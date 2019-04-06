@@ -6,7 +6,7 @@
   force = true
 
 [[redirects]]
-  from = "https://www.ivan.dalmet.fr/*"
+  from = "http://www.ivan.dalmet.fr/*"
   to = "https://ivan.dalmet.fr/:splat"
   status = 301
   force = true
