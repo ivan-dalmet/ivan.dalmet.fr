@@ -1,23 +1,13 @@
 body {
+  color: $color-text;
   font-family: $font-family-base;
-  color: $color-dark;
+  font-weight: normal;
 }
 
-a,
-.e-emulate-a {
-  cursor: pointer;
+a {
   color: inherit;
-  text-decoration: underline;
-  text-decoration-skip-ink: auto;
-  outline: none;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
 }
 
-a.e-clean-a {
-  cursor: default;
-  text-decoration: none;
+strong {
+  font-weight: bold;
 }

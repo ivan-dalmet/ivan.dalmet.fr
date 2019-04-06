@@ -1,0 +1,32 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: $color-accent;
+}
+
+body {
+  background: $color-primary linear-gradient(45deg, darken($color-primary, 5%) 0%, lighten($color-primary, 5%) 100%);
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: rem(4);
+    background: $color-accent;
+  }
+}
+
+img {
+  max-width: 100%;
+  width: auto \9;
+  height: auto !important;
+  -ms-interpolation-mode: bicubic;
+}

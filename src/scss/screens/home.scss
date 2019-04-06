@@ -4,112 +4,79 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  color: darken($color-light, 8%);
-  background: $color-primary linear-gradient(45deg, darken($color-primary, 5%) 0%, lighten($color-primary, 5%) 100%);
-
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 0.2rem;
-    background: $color-accent;
-  }
+  padding: rem(32);
 
   a,
-  strong,
-  h1 {
-    color: $color-light;
+  strong {
+    color: $color-text-light;
   }
 
   &__main {
-    > * {
-      margin: 0;
-    }
-
     div {
-      font-size: 1.5rem;
+      font-size: rem(12);
       font-weight: 200;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: rem(38);
       font-weight: normal;
       font-family: $font-family-title;
       color: $color-accent;
+      margin: rem(10) 0;
     }
 
     h2 {
-      margin-top: .2rem;
-      font-size: 1.63rem;
-      font-weight: 300;
+      font-size: rem(19);
+      margin: rem(10) 0;
     }
 
     h3 {
-      margin-top: .2rem;
-      font-size: 1.02rem;
+      font-size: rem(18);
       font-weight: 300;
-
-      a {
-        font-size: 1.4em;
-        font-weight: normal;
-      }
+      margin: rem(10) 0;
     }
 
     @media only screen and (min-width: $mq-md) {
       div {
-        font-size: 2rem;
+        font-size: rem(18);
       }
 
       h1 {
-        font-size: 3.4rem;
+        font-size: rem(58);
+        margin: rem(20) 0;
       }
 
       h2 {
-        font-size: 2.48rem;
+        font-size: rem(28.2);
       }
 
       h3 {
-        font-size: 1.55rem;
+        font-size: rem(27);
       }
     }
   }
 
   &__side {
-    margin-top: 2rem;
-    padding: 1.5rem 1rem;
+    margin: rem(18) 0;
+    padding: rem(18) rem(16);
     border-top: rem(1) solid rgba($color-dark, .2);
     border-bottom: rem(1) solid rgba($color-dark, .2);
-    font-weight: 300;
-    font-size: .95rem;
+    font-size: rem(14);
 
     @media only screen and (min-width: $mq-md) {
-      font-size: 1.42rem;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .e-emulate-a {
-      color: $color-light;
-      font-weight: normal;
+      font-size: rem(18);
     }
   }
 
   &__contact {
-    margin-top: 2rem;
-
     p {
-      margin: 0 0 .5rem;
-      font-size: .8rem;
+      margin: 0 0 rem(8);
+      font-size: rem(12);
     }
 
     @media only screen and (min-width: $mq-md) {
       p {
-        font-size: .9rem;
+        font-size: rem(14);
       }
     }
   }
