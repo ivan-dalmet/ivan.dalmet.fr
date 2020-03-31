@@ -66,7 +66,7 @@ export const buildHtml = () => src(path.html.input)
   .pipe($htmlmin({ collapseWhitespace: true }))
   .pipe(dest(path.html.output));
 
-export const watchHtml = () => watch(path.html.watch, buildHtml);
+export const watchHtml = () => watch(path.html.watch, series(buildScss, buildHtml));
 
 // -------------------------
 //    Copy statics files tasks
@@ -105,4 +105,3 @@ export const dev = series(
 );
 
 export default build;
-
