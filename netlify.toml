@@ -1,6 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-[[redirects]]
-  from = "https://ivandalmet.netlify.com/*"
-  to = "https://ivan.dalmet.fr/:splat"
-  status = 301
-  force = true

@@ -2,22 +2,24 @@
 
 Repository for my personal website: [ivan.dalmet.fr](https://ivan.dalmet.fr)
 
+---
+
 ## Install dependencies
 
-This project use [Yarn](https://yarnpkg.com)
+This project use [Pnpm](https://pnpm.io/)
 
 ```
-yarn install
+pnpm install
 ```
 
-## Run dev website server
+## Run dev server
 
 ```
-yarn start
+pnpm dev
 ```
 
-## Build website
+## Build website for production
 
 ```
-yarn build
+pnpm build
 ```
