@@ -52,6 +52,7 @@ const ThemeButton = (props: {
       disabled={props.isActive}
       onClick={() => props.onClick()}
       title={`Set theme to ${props.theme} `}
+      aria-label={props.isActive ? undefined : `Set theme to ${props.theme}`}
     >
       {props.theme === "system" && <LuMonitor />}
       {props.theme === "dark" && <LuMoonStar />}

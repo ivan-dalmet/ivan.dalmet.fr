@@ -7,7 +7,6 @@ import { ThemeSwitcher } from "@/app/ThemeSwitcher";
 export default function Home() {
   return (
     <>
-      <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
       <div className="px-4 pt-8 pb-32 md:px-12 md:py-20 flex w-full max-w-[54rem] m-auto flex-col-reverse md:gap-4 md:flex-row items-center">
         <div className="relative z-10 text-sm text-balance flex-1 w-fit md:w-full mx-auto md:mx-0 flex flex-col gap-12">
           <div className="flex flex-col gap-5">
@@ -77,6 +76,7 @@ export default function Home() {
           />
         </div>
       </div>
+      <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
     </>
   );
 }
