@@ -68,6 +68,7 @@ export default function Home() {
           width={516}
           height={516}
           alt="Picture of Ivan Dalmet"
+          sizes="100vw, (min-width: 768px) 516px"
         />
       </div>
     </div>
