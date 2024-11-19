@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 const fontHeadingRegular = localFont({
@@ -35,10 +36,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${fontHeadingRegular.variable} ${fontSansRegular.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+      suppressHydrationWarning
     >
       <body className="flex flex-col overflow-x-hidden min-h-svh">
-        <div className="fixed bg-[url('/noise.png')] bg-repeat inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none"></div>
-        {children}
+        <ThemeProvider attribute="class">
+          <div className="fixed z-50 bg-[url('/noise.png')] bg-repeat inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none"></div>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

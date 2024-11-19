@@ -24,12 +24,10 @@
     --color-accent-text: #814000;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-background: var(--color-gray-900);
-      --color-foreground: var(--color-gray-400);
-      --color-highlight: white;
-      --color-accent-text: #ffbc1c;
-    }
+  .dark {
+    --color-background: var(--color-gray-900);
+    --color-foreground: var(--color-gray-400);
+    --color-highlight: white;
+    --color-accent-text: #ffbc1c;
   }
 }
