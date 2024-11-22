@@ -45,7 +45,7 @@ const ThemeButton = (props: {
   return (
     <button
       className={cn(
-        "opacity-70 text-base p-2 rounded-full border border-transparent",
+        "opacity-70 bg-transparent text-base p-2 rounded-full border border-transparent",
         props.isActive &&
           "text-highlight opacity-100 border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900"
       )}

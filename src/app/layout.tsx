@@ -8,9 +8,9 @@ const fontHeadingRegular = localFont({
   variable: "--font-heading",
   weight: "400",
 });
-const fontSansRegular = localFont({
+const fontDisplayRegular = localFont({
   src: "./fonts/basiercirclemono-regular-webfont.woff",
-  variable: "--font-sans",
+  variable: "--font-display",
   weight: "400",
 });
 
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontHeadingRegular.variable} ${fontSansRegular.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+      className={`${fontHeadingRegular.variable} ${fontDisplayRegular.variable} font-display antialiased bg-background text-foreground overflow-x-hidden`}
       suppressHydrationWarning
     >
       <body className="flex flex-col overflow-x-hidden min-h-svh">
