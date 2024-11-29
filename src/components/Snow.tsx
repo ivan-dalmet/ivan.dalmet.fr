@@ -11,6 +11,7 @@ export const Snow = () => {
       style={{
         position: "fixed",
         inset: 0,
+        zIndex: 999,
       }}
     />
   );
