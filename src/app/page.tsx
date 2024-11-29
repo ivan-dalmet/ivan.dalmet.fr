@@ -7,7 +7,7 @@ import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 export default function Home() {
   return (
     <>
-      <div className="px-4 pt-8 pb-32 md:px-12 md:py-20 flex w-full max-w-[54rem] m-auto flex-col-reverse md:gap-4 md:flex-row items-center">
+      <div className="px-4 pt-8 pb-32 md:px-12 md:py-20 flex w-full max-w-[54rem] m-auto flex-col-reverse gap-4 md:flex-row items-center">
         <div className="relative z-10 text-sm text-balance flex-1 w-fit md:w-full mx-auto md:mx-0 flex flex-col gap-12">
           <div className="flex flex-col gap-5">
             <h1 className="">
@@ -65,15 +65,18 @@ export default function Home() {
 
           <Signature className="w-32" />
         </div>
-        <div className="-mx-24 -my-12 relative">
-          <div className="bg-image-color absolute w-[61.5%] h-[61.5%] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-39.3%] mix-blend-hue rounded-full" />
+        <div className="relative md:-translate-x-8">
+          <div className="bg-image-background absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full" />
+          <div className="gradient-overlay bg-image-background absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full bg-gradient-to-t from-background-from to-background-to" />
+          <div className="bg-image-accent absolute w-[70%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-15%] rounded-full" />
           <Image
+            className="relative"
             priority
             src={photo}
-            width={516}
-            height={516}
+            width={261}
+            height={396}
             alt="Picture of Ivan Dalmet"
-            sizes="100vw, (min-width: 768px) 516px"
+            sizes="100vw, (min-width: 768px) 261px"
           />
         </div>
       </div>

@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { LuMonitor, LuMoonStar, LuSun } from "react-icons/lu";
 
-export const THEMES = ["system", "dark", "light", "arc"] as const;
+export const THEMES = ["arc", "light", "dark", "system"] as const;
 type Theme = (typeof THEMES)[number];
 
 export const ThemeSwitcher = (props: { className?: string }) => {
@@ -23,26 +23,14 @@ export const ThemeSwitcher = (props: { className?: string }) => {
 
   return (
     <div className={cn("rounded-full w-fit p-1 flex", props.className)}>
-      <ThemeButton
-        theme="arc"
-        isActive={hydratedTheme === "arc"}
-        onClick={() => changeTheme("arc")}
-      />
-      <ThemeButton
-        theme="light"
-        isActive={hydratedTheme === "light"}
-        onClick={() => changeTheme("light")}
-      />
-      <ThemeButton
-        theme="dark"
-        isActive={hydratedTheme === "dark"}
-        onClick={() => changeTheme("dark")}
-      />{" "}
-      <ThemeButton
-        theme="system"
-        isActive={hydratedTheme === "system"}
-        onClick={() => changeTheme("system")}
-      />
+      {THEMES.map((theme) => (
+        <ThemeButton
+          key={theme}
+          theme={theme}
+          isActive={hydratedTheme === theme}
+          onClick={() => changeTheme(theme)}
+        />
+      ))}
     </div>
   );
 };
