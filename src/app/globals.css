@@ -59,7 +59,8 @@
       --arc-palette-foregroundSecondary,
       --color-accent-text
     );
-    --color-image-background: var(--arc-palette-foregroundSecondary);
+    --color-image-background: var(--arc-palette-foregroundSecondary, #333);
+    --color-image-accent: var(--arc-palette-foregroundSecondary, #fff);
     --color-image-background-from: var(--color-background-from);
     --color-image-background-to: var(--color-background-to);
 

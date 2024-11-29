@@ -1,9 +1,8 @@
-import Image from "next/image";
-import photo from "@/../public/ivan-dalmet.png";
 import { CustomLink } from "@/components/CustomLink";
 import { Signature } from "@/components/Signature";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Snow } from "@/components/Snow";
+import { Picture } from "@/components/Picture";
 
 export default function Home() {
   return (
@@ -66,20 +65,7 @@ export default function Home() {
 
           <Signature className="w-32" />
         </div>
-        <div className="relative md:-translate-x-8">
-          <div className="blur-3xl opacity-20 bg-image-accent absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full" />
-          <div className="bg-image-background absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full bg-gradient-to-t from-image-background-from to-image-background-to" />
-          <div className="bg-image-accent absolute w-[70%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-15%] rounded-full" />
-          <Image
-            className="relative"
-            priority
-            src={photo}
-            width={261}
-            height={396}
-            alt="Picture of Ivan Dalmet"
-            sizes="100vw, (min-width: 768px) 261px"
-          />
-        </div>
+        <Picture />
       </div>
       <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
       <Snow />
