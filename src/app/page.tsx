@@ -2,7 +2,7 @@ import Image from "next/image";
 import photo from "@/../public/ivan-dalmet.png";
 import { CustomLink } from "@/components/CustomLink";
 import { Signature } from "@/components/Signature";
-import { ThemeSwitcher } from "@/app/ThemeSwitcher";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 export default function Home() {
   return (
@@ -65,7 +65,8 @@ export default function Home() {
 
           <Signature className="w-32" />
         </div>
-        <div className="-mx-24 -my-12">
+        <div className="-mx-24 -my-12 relative">
+          <div className="bg-image-color absolute w-[61.5%] h-[61.5%] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-39.3%] mix-blend-hue rounded-full" />
           <Image
             priority
             src={photo}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
+import { THEMES } from "@/components/ThemeSwitcher";
 
 const fontHeadingRegular = localFont({
   src: "./fonts/argestadisplay-regular-webfont.woff",
@@ -39,7 +40,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex flex-col overflow-x-hidden min-h-svh">
-        <ThemeProvider attribute="class">
+        <ThemeProvider
+          attribute="class"
+          //@ts-expect-error THEME is readonly and the ThemeProvider don't like that
+          themes={THEMES}
+        >
+          <div className="arc-only fixed inset-0 bg-gradient-to-t from-background-from to-background-to mix-blend-overlay" />
           <div className="fixed z-50 bg-[url('/noise.png')] bg-repeat inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none"></div>
           {children}
         </ThemeProvider>

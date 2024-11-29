@@ -19,15 +19,50 @@
 
   :root {
     --color-background: var(--color-gray-100);
+    --color-background-from: var(--color-background);
+    --color-background-to: var(--color-background);
     --color-foreground: var(--color-gray-600);
     --color-highlight: var(--color-gray-900);
+    --color-border: var(--color-gray-200);
     --color-accent-text: #814000;
+    --color-image-color: #ffbc1c;
   }
 
   .dark {
     --color-background: var(--color-gray-900);
     --color-foreground: var(--color-gray-400);
     --color-highlight: white;
+    --color-border: var(--color-gray-800);
+
     --color-accent-text: #ffbc1c;
+    --color-image-color: #ffbc1c;
+  }
+
+  .arc-only {
+    display: none;
+  }
+
+  .arc {
+    --color-background: var(--arc-palette-background, --color-background);
+    --color-background-from: var(
+      --arc-background-gradient-color0,
+      --color-background
+    );
+    --color-background-to: var(--arc-background-gradient-color1);
+    --color-foreground: var(--arc-palette-title, --color-foreground);
+    --color-highlight: var(--arc-palette-maxContrastColor, --color-highlight);
+    --color-border: var(--arc-palette-foregroundSecondary, --color-border);
+    --color-accent-text: var(
+      --arc-palette-foregroundSecondary,
+      --color-accent-text
+    );
+    --color-image-color: var(
+      --arc-palette-foregroundPrimary,
+      --color-image-color
+    );
+
+    .arc-only {
+      display: block;
+    }
   }
 }
