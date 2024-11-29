@@ -3,6 +3,7 @@ import photo from "@/../public/ivan-dalmet.png";
 import { CustomLink } from "@/components/CustomLink";
 import { Signature } from "@/components/Signature";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { Snow } from "@/components/Snow";
 
 export default function Home() {
   return (
@@ -66,8 +67,8 @@ export default function Home() {
           <Signature className="w-32" />
         </div>
         <div className="relative md:-translate-x-8">
-          <div className="bg-image-background absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full" />
-          <div className="gradient-overlay bg-image-background absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full bg-gradient-to-t from-background-from to-background-to" />
+          <div className="blur-3xl opacity-20 bg-image-accent absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full" />
+          <div className="bg-image-background absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full bg-gradient-to-t from-image-background-from to-image-background-to" />
           <div className="bg-image-accent absolute w-[70%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-15%] rounded-full" />
           <Image
             className="relative"
@@ -81,6 +82,7 @@ export default function Home() {
         </div>
       </div>
       <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
+      <Snow />
     </>
   );
 }

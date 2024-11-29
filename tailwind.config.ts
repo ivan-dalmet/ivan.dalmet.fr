@@ -40,6 +40,8 @@ export default {
       border: "var(--color-border)",
       ["accent-text"]: "var(--color-accent-text)",
       ["image-background"]: "var(--color-image-background)",
+      ["image-background-from"]: "var(--color-image-background-from)",
+      ["image-background-to"]: "var(--color-image-background-to)",
       ["image-accent"]: "var(--color-image-accent)",
     },
   },

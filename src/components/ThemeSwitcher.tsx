@@ -1,24 +1,17 @@
 "use client";
 
+import { useActiveTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { LuMonitor, LuMoonStar, LuSun } from "react-icons/lu";
+import { LuCandyCane, LuMonitor, LuMoonStar, LuSun } from "react-icons/lu";
 
-export const THEMES = ["arc", "light", "dark", "system"] as const;
-type Theme = (typeof THEMES)[number];
+export const THEMES = ["arc", "christmas", "light", "dark", "system"] as const;
+export type Theme = (typeof THEMES)[number];
 
 export const ThemeSwitcher = (props: { className?: string }) => {
-  const { theme, setTheme } = useTheme();
-  const [isHydrated, setIsHydrated] = useState(false);
-  const hydratedTheme = isHydrated ? theme : null;
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, [theme]);
+  const activeTheme = useActiveTheme();
 
   const changeTheme = (theme: Theme) => {
-    setTheme(theme);
+    activeTheme.setTheme(theme);
   };
 
   return (
@@ -27,7 +20,7 @@ export const ThemeSwitcher = (props: { className?: string }) => {
         <ThemeButton
           key={theme}
           theme={theme}
-          isActive={hydratedTheme === theme}
+          isActive={activeTheme.theme === theme}
           onClick={() => changeTheme(theme)}
         />
       ))}
@@ -74,6 +67,7 @@ const ThemeButton = (props: {
       {props.theme === "system" && <LuMonitor />}
       {props.theme === "dark" && <LuMoonStar />}
       {props.theme === "light" && <LuSun />}
+      {props.theme === "christmas" && <LuCandyCane />}
     </button>
   );
 };

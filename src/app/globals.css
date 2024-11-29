@@ -27,6 +27,8 @@
     --color-accent-text: #814000;
     --color-image-background: #ffbc1c;
     --color-image-accent: var(--color-image-background);
+    --color-image-background-from: var(--color-image-background);
+    --color-image-background-to: var(--color-image-background);
   }
 
   .dark {
@@ -58,6 +60,26 @@
       --color-accent-text
     );
     --color-image-background: var(--arc-palette-foregroundSecondary);
+    --color-image-background-from: var(--color-background-from);
+    --color-image-background-to: var(--color-background-to);
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
+  .christmas {
+    --color-background: #590d0d;
+    --color-background-from: #380000;
+    --color-background-to: #590d0d;
+    --color-foreground: #e9d1d1;
+    --color-highlight: #f8b229;
+    --color-border: rgba(248, 178, 41, 0.4);
+    --color-accent-text: white;
+    --color-image-background: #165b33;
+    --color-image-accent: #f8b229;
+    --color-image-background-from: #042e16;
+    --color-image-background-to: #165b33;
 
     .gradient-overlay {
       display: block;
