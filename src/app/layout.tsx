@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import { THEMES } from "@/components/ThemeSwitcher";
+import { THEMES, ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { Snow } from "@/components/Snow";
 
 const fontArgestaDisplay = localFont({
   src: "./fonts/argestadisplay-regular-webfont.woff",
@@ -48,6 +49,8 @@ export default function RootLayout({
           <div className="gradient-overlay fixed inset-0 bg-gradient-to-t from-background-from to-background-to mix-blend-overlay" />
           <div className="fixed z-50 bg-[url('/noise.png')] bg-repeat inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none"></div>
           {children}
+          <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
+          <Snow />
         </ThemeProvider>
       </body>
     </html>

@@ -1,7 +1,5 @@
 import { CustomLink } from "@/components/CustomLink";
 import { Signature } from "@/components/Signature";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import { Snow } from "@/components/Snow";
 import { Picture } from "@/components/Picture";
 
 export default function Home() {
@@ -67,8 +65,6 @@ export default function Home() {
         </div>
         <Picture />
       </div>
-      <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
-      <Snow />
     </>
   );
 }
