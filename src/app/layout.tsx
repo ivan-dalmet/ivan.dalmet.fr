@@ -46,7 +46,7 @@ export default function RootLayout({
           //@ts-expect-error THEME is readonly and the ThemeProvider don't like that
           themes={THEMES}
         >
-          <div className="gradient-overlay fixed inset-0 bg-gradient-to-t from-background-from to-background-to mix-blend-overlay" />
+          <div className="gradient-overlay fixed inset-0 bg-gradient-to-t from-background-from to-background-to mix-blend-overlay pointer-events-none" />
           <div className="fixed z-50 bg-[url('/noise.png')] bg-repeat inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none"></div>
           {children}
           <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
