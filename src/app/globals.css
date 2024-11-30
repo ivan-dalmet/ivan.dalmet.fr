@@ -15,9 +15,11 @@
     --color-gray-800: #272623;
     --color-gray-900: #1a1916;
     --color-gray-950: #0b0a08;
-  }
 
-  :root {
+    --font-sans: var(--font-basiercirclemono);
+    --font-heading: var(--font-argestadisplay);
+
+    /* LIGHT THEME */
     --color-background: var(--color-gray-100);
     --color-background-from: var(--color-background);
     --color-background-to: var(--color-background);

@@ -12,7 +12,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ["var(--font-sans)", ...fontFamily.sans],
-      heading: ["var(--font-heading)"],
+      heading: ["var(--font-heading)", "serif"],
     },
     colors: {
       transparent: "transparent",

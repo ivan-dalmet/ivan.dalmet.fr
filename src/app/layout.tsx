@@ -4,14 +4,14 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { THEMES } from "@/components/ThemeSwitcher";
 
-const fontHeadingRegular = localFont({
+const fontArgestaDisplay = localFont({
   src: "./fonts/argestadisplay-regular-webfont.woff",
-  variable: "--font-heading",
+  variable: "--font-argestadisplay",
   weight: "400",
 });
-const fontSansRegular = localFont({
+const fontBasierCircleMono = localFont({
   src: "./fonts/basiercirclemono-regular-webfont.woff",
-  variable: "--font-sans",
+  variable: "--font-basiercirclemono",
   weight: "400",
 });
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontHeadingRegular.variable} ${fontSansRegular.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
       suppressHydrationWarning
     >
       <body className="flex flex-col overflow-x-hidden min-h-svh">
