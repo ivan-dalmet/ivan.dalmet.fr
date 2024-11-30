@@ -3,9 +3,22 @@
 import { ArcIcon } from "@/components/ArcIcon";
 import { useActiveTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
-import { LuCandyCane, LuMonitor, LuMoonStar, LuSun } from "react-icons/lu";
+import {
+  LuCandyCane,
+  LuMonitor,
+  LuMoonStar,
+  LuPalmtree,
+  LuSun,
+} from "react-icons/lu";
 
-export const THEMES = ["arc", "christmas", "light", "dark", "system"] as const;
+export const THEMES = [
+  "arc",
+  "miami",
+  "christmas",
+  "light",
+  "dark",
+  "system",
+] as const;
 export type Theme = (typeof THEMES)[number];
 
 export const ThemeSwitcher = (props: { className?: string }) => {
@@ -55,6 +68,7 @@ const ThemeButton = (props: {
       {props.theme === "dark" && <LuMoonStar />}
       {props.theme === "light" && <LuSun />}
       {props.theme === "christmas" && <LuCandyCane />}
+      {props.theme === "miami" && <LuPalmtree />}
     </button>
   );
 };

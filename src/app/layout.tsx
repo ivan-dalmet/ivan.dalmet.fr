@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { THEMES, ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Snow } from "@/components/Snow";
+import { Shadow } from "@/components/Shadow";
 
 const fontArgestaDisplay = localFont({
   src: "./fonts/argestadisplay-regular-webfont.woff",
@@ -13,6 +14,12 @@ const fontArgestaDisplay = localFont({
 const fontBasierCircleMono = localFont({
   src: "./fonts/basiercirclemono-regular-webfont.woff",
   variable: "--font-basiercirclemono",
+  weight: "400",
+});
+
+const fontPacifico = localFont({
+  src: "./fonts/miami.woff",
+  variable: "--font-miami",
   weight: "400",
 });
 
@@ -37,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontPacifico.variable} antialiased bg-background text-foreground overflow-x-hidden`}
       suppressHydrationWarning
     >
       <body className="flex flex-col overflow-x-hidden min-h-svh">
@@ -48,9 +55,10 @@ export default function RootLayout({
         >
           <div className="gradient-overlay fixed inset-0 bg-gradient-to-t from-background-from to-background-to mix-blend-overlay pointer-events-none" />
           <div className="fixed z-50 bg-[url('/noise.png')] bg-repeat inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none"></div>
-          {children}
+          <div className="flex flex-col flex-1 relative">{children}</div>
           <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
           <Snow />
+          <Shadow />
         </ThemeProvider>
       </body>
     </html>

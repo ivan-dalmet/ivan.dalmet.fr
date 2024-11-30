@@ -37,6 +37,8 @@ export default {
       ["background-to"]: "var(--color-background-to)",
       foreground: "var(--color-foreground)",
       highlight: "var(--color-highlight)",
+      link: "var(--color-link)",
+      ["link-decoration"]: "var(--color-link-decoration)",
       border: "var(--color-border)",
       ["accent-text"]: "var(--color-accent-text)",
       ["image-background"]: "var(--color-image-background)",
