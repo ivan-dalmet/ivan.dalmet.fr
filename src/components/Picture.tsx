@@ -16,7 +16,7 @@ export const Picture = () => {
       {isLoaded && (
         <div className="bg-image-accent absolute w-[70%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-15%] rounded-full" />
       )}
-      {theme === "christmas" && (
+      {theme?.name === "christmas" && (
         <Image
           src={santaHatSrc}
           alt=""

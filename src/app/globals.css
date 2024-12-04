@@ -33,9 +33,11 @@
     --color-image-accent: var(--color-image-background);
     --color-image-background-from: var(--color-image-background);
     --color-image-background-to: var(--color-image-background);
+    --radius: 0.5rem;
   }
 
   .dark {
+    color-scheme: dark;
     --color-background: var(--color-gray-900);
     --color-foreground: var(--color-gray-400);
     --color-highlight: white;
@@ -78,6 +80,7 @@
   }
 
   .christmas {
+    color-scheme: dark;
     --color-background: #590d0d;
     --color-background-from: #380000;
     --color-background-to: #590d0d;
@@ -120,7 +123,7 @@
   .miami {
     --font-heading: var(--font-miami);
 
-    --color-background: #f8b229;
+    --color-background: #fbbd42;
     --color-background-from: #29d2f8;
     --color-background-to: #ff00e6;
     --color-foreground: hsla(315, 72%, 16%, 80%);
@@ -143,5 +146,109 @@
     h3 {
       animation: neonMiami 1.5s infinite alternate;
     } */
+  }
+
+  .winter-wonderland {
+    color-scheme: dark;
+    --color-background: #001f33;
+    --color-background-from: #001b29;
+    --color-background-to: #00334d;
+    --color-foreground: #e8f9ff;
+    --color-highlight: #80d4ff;
+    --color-link: var(--color-highlight);
+    --color-link-decoration: var(--color-link);
+    --color-border: rgba(128, 212, 255, 0.2);
+    --color-accent-text: #ffffff;
+    --color-image-background: #004d66;
+    --color-image-accent: #80d4ff;
+    --color-image-background-from: #002633;
+    --color-image-background-to: #004d66;
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
+  .cozy-fireplace {
+    color-scheme: dark;
+    --color-background: #2e1a0f;
+    --color-background-from: #3b2516;
+    --color-background-to: #2e1a0f;
+    --color-foreground: #fcebcf;
+    --color-highlight: #d96c0d;
+    --color-link: var(--color-highlight);
+    --color-link-decoration: var(--color-link);
+    --color-border: rgba(217, 108, 13, 0.2);
+    --color-accent-text: #ffffff;
+    --color-image-background: #5c2c12;
+    --color-image-accent: #d9980d;
+    --color-image-background-from: #42200e;
+    --color-image-background-to: #5c2c12;
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
+  .tranquil-forest {
+    color-scheme: dark;
+    --color-background: #2b423f;
+    --color-background-from: #1f2e2d;
+    --color-background-to: #2b423f;
+    --color-foreground: #eae8dc;
+    --color-highlight: #6aab8e;
+    --color-link: var(--color-highlight);
+    --color-link-decoration: var(--color-link);
+    --color-border: rgba(106, 171, 142, 0.2);
+    --color-accent-text: #ffffff;
+    --color-image-background: #231709;
+    --color-image-accent: #26ba77;
+    --color-image-background-from: #253d34;
+    --color-image-background-to: #37594c;
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
+  .romantic-love {
+    --color-background: #ffe2ee;
+    --color-background-from: #a12b8b;
+    --color-background-to: #ff98c4;
+    --color-foreground: #5e1451;
+    --color-highlight: #a12b8b;
+    --color-link: var(--color-highlight);
+    --color-link-decoration: var(--color-link);
+    --color-border: rgba(215, 93, 115, 0.2);
+    --color-accent-text: #ffffff;
+    --color-image-background: #8b3a56;
+    --color-image-accent: #ffcdf6;
+    --color-image-background-from: #a12b8b;
+    --color-image-background-to: #ff98c4;
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
+  .golden-elegance {
+    color-scheme: dark;
+    --color-background: #171615;
+    --color-background-from: #d4af37;
+    --color-background-to: #443a29;
+    --color-foreground: #f6e8c3;
+    --color-highlight: #cab058;
+    --color-link: var(--color-highlight);
+    --color-link-decoration: var(--color-link);
+    --color-border: rgba(212, 175, 55, 0.2);
+    --color-accent-text: #ffffff;
+    --color-image-background: #3c2f1a;
+    --color-image-accent: #cfbf8a;
+    --color-image-background-from: #5f5123;
+    --color-image-background-to: #a29466;
+
+    .gradient-overlay {
+      display: block;
+    }
   }
 }

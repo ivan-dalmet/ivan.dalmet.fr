@@ -5,7 +5,7 @@ import Snowfall from "react-snowfall";
 
 export const Snow = () => {
   const { theme } = useActiveTheme();
-  if (theme !== "christmas") return null;
+  if (theme?.name !== "christmas") return null;
   return (
     <Snowfall
       style={{

@@ -6,7 +6,7 @@ import Image from "next/image";
 export const Shadow = () => {
   const { theme } = useActiveTheme();
 
-  if (theme !== "miami") return null;
+  if (theme?.name !== "miami") return null;
 
   return (
     <Image
