@@ -1,4 +1,3 @@
-import { ArcIcon } from "@/components/ArcIcon";
 import { FC } from "react";
 import {
   LuCandyCane,
@@ -7,11 +6,16 @@ import {
   LuHeart,
   LuMonitor,
   LuMoon,
+  LuMusic,
   LuPalmtree,
   LuSnowflake,
   LuSun,
   LuTreePine,
 } from "react-icons/lu";
+import { IconArc } from "@/components/IconArc";
+import { IconForkIt } from "@/components/IconForkIt";
+import { IconBearStudio } from "@/components/IconBearStudio";
+import { IconStartUI } from "@/components/IconStartUI";
 
 export const THEME_TYPES = [
   {
@@ -34,29 +38,52 @@ export const THEMES = [
     label: "Auto (system)",
     icon: LuMonitor,
     type: "default",
+    expose: true,
   },
   {
     name: "dark",
     label: "Dark mode",
     icon: LuMoon,
     type: "default",
+    expose: true,
   },
   {
     name: "light",
     label: "Light mode",
     icon: LuSun,
     type: "default",
+    expose: true,
   },
-  {
-    name: "arc",
-    label: "Your Arc Brower theme!",
-    icon: ArcIcon,
-    type: "recommended",
-  },
+
   {
     name: "christmas",
     label: "Oh Oh Oh! Merry Christmas",
     icon: LuCandyCane,
+    type: "recommended",
+    expose: true,
+  },
+  {
+    name: "bearstudio",
+    label: "BearStudio",
+    icon: IconBearStudio,
+    type: "recommended",
+  },
+  {
+    name: "fork-it",
+    label: "Fork it! Community",
+    icon: IconForkIt,
+    type: "recommended",
+  },
+  {
+    name: "start-ui",
+    label: "Start UI",
+    icon: IconStartUI,
+    type: "recommended",
+  },
+  {
+    name: "arc",
+    label: "Your Arc Brower theme!",
+    icon: IconArc,
     type: "recommended",
   },
   {
@@ -95,11 +122,18 @@ export const THEMES = [
     icon: LuCrown,
     type: "other",
   },
+  {
+    name: "funky-neon",
+    label: "Funky Neon",
+    icon: LuMusic,
+    type: "other",
+  },
 ] satisfies {
   name: string;
   label: string;
   icon: FC;
   type: (typeof THEME_TYPES)[number]["name"];
+  expose?: boolean;
 }[];
 
 export type ThemeName = (typeof THEMES)[number]["name"];

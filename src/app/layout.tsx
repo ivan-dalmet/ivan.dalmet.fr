@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Tomorrow, Rubik } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
@@ -17,10 +18,24 @@ const fontBasierCircleMono = localFont({
   variable: "--font-basiercirclemono",
   weight: "400",
 });
-
-const fontPacifico = localFont({
+const fontMiami = localFont({
   src: "./fonts/miami.woff",
   variable: "--font-miami",
+  weight: "400",
+});
+const fontTomorrow = Tomorrow({
+  variable: "--font-tomorrow",
+  subsets: ["latin"],
+  weight: "400",
+});
+const fontRubik = Rubik({
+  variable: "--font-rubik",
+  subsets: ["latin"],
+  weight: "700",
+});
+const fontTrashhand = localFont({
+  src: "./fonts/trashhand.woff",
+  variable: "--font-trashhand",
   weight: "400",
 });
 
@@ -49,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontPacifico.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} antialiased bg-background text-foreground overflow-x-hidden`}
       suppressHydrationWarning
     >
       <body className="flex flex-col overflow-x-hidden min-h-svh">

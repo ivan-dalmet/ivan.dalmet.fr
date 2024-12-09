@@ -251,4 +251,107 @@
       display: block;
     }
   }
+
+  .funky-neon {
+    color-scheme: dark;
+    --color-background: #23074d;
+    --color-background-from: #cc5333;
+    --color-background-to: #23074d;
+    --color-foreground: #f3f4ed;
+    --color-highlight: #ff4d6d;
+    --color-link: #00bbf9;
+    --color-link-decoration: #00bbf9;
+    --color-border: rgba(255, 77, 109, 0.4);
+    --color-accent-text: #ffffff;
+    --color-image-background: #00bbf9;
+    --color-image-accent: #ff4d6d;
+    --color-image-background-from: #ad447a;
+    --color-image-background-to: #23074d;
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
+  .fork-it {
+    --font-heading: var(--font-tomorrow);
+    --color-background: #171717;
+    --color-background-from: #1c1c1c;
+    --color-background-to: #717171;
+    --color-foreground: #a3a3a3;
+    --color-highlight: #ebff11;
+    --color-link: #f5f5f5;
+    --color-link-decoration: #717171;
+    --color-border: #000;
+    --color-accent-text: #ebff11;
+    --color-image-background: #ebff11;
+    --color-image-accent: #f5f5f5;
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
+  .bearstudio {
+    --font-heading: var(--font-trashhand);
+    --color-background: #00404c;
+    --color-background-from: #003139;
+    --color-background-to: #007d93;
+    --color-foreground: rgba(255, 255, 255, 0.7);
+    --color-highlight: #ffc10e;
+    --color-link: #fff;
+    --color-link-decoration: #717171;
+    --color-border: #000;
+    --color-accent-text: #ffc10e;
+    --color-image-background: #ffc10e;
+    --color-image-accent: #ffc10e;
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
+  .start-ui {
+    --font-heading: var(--font-rubik);
+
+    --color-background: #111111;
+    --color-foreground: rgba(255, 255, 255, 0.7);
+    --color-highlight: #fff;
+    h1 strong.text-highlight,
+    h2.text-highlight,
+    h3.text-highlight {
+      font-weight: 700;
+      background-clip: text !important;
+      color: transparent;
+      background: linear-gradient(
+        24deg,
+        #fcd34d,
+        #f59e0b 13.54%,
+        #fd6243 27.6%,
+        #df74ee 42.19%,
+        #8364f4 55.73%,
+        #6ab7e0 70.31%,
+        #92efcd 82.81%,
+        #32cc91 96.88%
+      );
+    }
+    --color-link: #fff;
+    --color-link-decoration: #717171;
+    --color-border: #000;
+    --color-accent-text: #fff;
+    .bg-image-background {
+      background: linear-gradient(
+        24deg,
+        #fcd34d,
+        #f59e0b 13.54%,
+        #fd6243 27.6%,
+        #df74ee 42.19%,
+        #8364f4 55.73%,
+        #6ab7e0 70.31%,
+        #92efcd 82.81%,
+        #32cc91 96.88%
+      );
+    }
+    --color-image-accent: transparent;
+  }
 }

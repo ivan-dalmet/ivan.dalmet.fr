@@ -45,15 +45,15 @@ export const ThemeSwitcher = (props: { className?: string }) => {
           onClick={() => setIsOpen(true)}
           className={cn(
             "opacity-70 text-base p-2 rounded-full border border-transparent",
-            activeTheme.theme?.type === "other" &&
-              "text-highlight opacity-100 border-border bg-background"
+            !activeTheme.theme?.expose &&
+              "text-link opacity-100 border-border bg-background"
           )}
           title="Search for a theme"
           aria-label="Search for a theme"
         >
           <LuMoreHorizontal />
         </button>
-        {THEMES.filter((t) => t.type === "default" || t.type === "recommended")
+        {THEMES.filter((t) => t.expose)
           .reverse()
           .map((theme) => {
             if (theme.name === "arc" && !isArc) return null;
@@ -119,8 +119,7 @@ const ThemeButton = (props: {
     <button
       className={cn(
         "opacity-70 text-base p-2 rounded-full border border-transparent",
-        props.isActive &&
-          "text-highlight opacity-100 border-border bg-background"
+        props.isActive && "text-link opacity-100 border-border bg-background"
       )}
       disabled={props.isActive}
       onClick={() => props.onClick()}
