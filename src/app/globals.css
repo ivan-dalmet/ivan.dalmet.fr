@@ -317,23 +317,26 @@
     --color-background: #111111;
     --color-foreground: rgba(255, 255, 255, 0.7);
     --color-highlight: #fff;
-    h1 strong.text-highlight,
-    h2.text-highlight,
-    h3.text-highlight {
-      font-weight: 700;
-      background-clip: text !important;
-      color: transparent;
-      background: linear-gradient(
-        24deg,
-        #fcd34d,
-        #f59e0b 13.54%,
-        #fd6243 27.6%,
-        #df74ee 42.19%,
-        #8364f4 55.73%,
-        #6ab7e0 70.31%,
-        #92efcd 82.81%,
-        #32cc91 96.88%
-      );
+    h1,
+    h2,
+    h3 {
+      &.text-highlight,
+      & .text-highlight {
+        font-weight: 700;
+        background-clip: text !important;
+        color: transparent;
+        background: linear-gradient(
+          24deg,
+          #fcd34d,
+          #f59e0b 13.54%,
+          #fd6243 27.6%,
+          #df74ee 42.19%,
+          #8364f4 55.73%,
+          #6ab7e0 70.31%,
+          #92efcd 82.81%,
+          #32cc91 96.88%
+        );
+      }
     }
     --color-link: #fff;
     --color-link-decoration: #717171;

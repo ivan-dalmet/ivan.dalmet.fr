@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Tomorrow, Rubik } from "next/font/google";
@@ -7,6 +8,7 @@ import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Snow } from "@/components/Snow";
 import { Shadow } from "@/components/Shadow";
 import { THEMES } from "@/themes";
+import { SetupThemeFromSearchParams } from "@/app/SetupThemeFromSearchParams";
 
 const fontArgestaDisplay = localFont({
   src: "./fonts/argestadisplay-regular-webfont.woff",
@@ -75,6 +77,9 @@ export default function RootLayout({
           <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
           <Snow />
           <Shadow />
+          <Suspense>
+            <SetupThemeFromSearchParams />
+          </Suspense>
         </ThemeProvider>
       </body>
     </html>
