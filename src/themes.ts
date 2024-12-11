@@ -128,12 +128,20 @@ export const THEMES = [
     icon: LuMusic,
     type: "other",
   },
+  {
+    name: "braille",
+    label: "Braille",
+    icon: LuMusic,
+    type: "other",
+    hidden: true,
+  },
 ] satisfies {
   name: string;
   label: string;
   icon: FC;
   type: (typeof THEME_TYPES)[number]["name"];
   expose?: boolean;
+  hidden?: boolean;
 }[];
 
 export type ThemeName = (typeof THEMES)[number]["name"];

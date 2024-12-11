@@ -40,6 +40,11 @@ const fontTrashhand = localFont({
   variable: "--font-trashhand",
   weight: "400",
 });
+const fontBraille = localFont({
+  src: "./fonts/braille.woff",
+  variable: "--font-braille",
+  weight: "400",
+});
 
 export const viewport: Viewport = {
   interactiveWidget: "resizes-content",
@@ -66,7 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} ${fontBraille.variable} antialiased bg-background text-foreground overflow-x-hidden`}
       suppressHydrationWarning
     >
       <body className="flex flex-col overflow-x-hidden min-h-svh">

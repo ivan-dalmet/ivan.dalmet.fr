@@ -40,19 +40,19 @@ export default function Home() {
             <li>
               BlueSky{" "}
               <CustomLink href="https://bsky.app/profile/ivan.dalmet.fr">
-                @ivan.dalmet.fr
+                <span className="arobase">@</span>ivan.dalmet.fr
               </CustomLink>
             </li>
             <li>
               Linkedin{" "}
               <CustomLink href="https://www.linkedin.com/in/ivandalmet/">
-                @ivandalmet
+                <span className="arobase">@</span>ivandalmet
               </CustomLink>
             </li>
             <li>
               X{" "}
               <CustomLink href="https://x.com/IvanDalmet">
-                @ivandalmet
+                <span className="arobase">@</span>ivandalmet
               </CustomLink>
             </li>
           </ul>

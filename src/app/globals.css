@@ -19,6 +19,8 @@
     --font-sans: var(--font-basiercirclemono);
     --font-heading: var(--font-argestadisplay);
 
+    --radius: 0.5rem;
+
     /* LIGHT THEME */
     --color-background: var(--color-neutral-100);
     --color-background-from: var(--color-background);
@@ -33,7 +35,6 @@
     --color-image-accent: var(--color-image-background);
     --color-image-background-from: var(--color-image-background);
     --color-image-background-to: var(--color-image-background);
-    --radius: 0.5rem;
   }
 
   .dark {
@@ -100,26 +101,6 @@
     }
   }
 
-  /* @keyframes neonMiami {
-    0%,
-    18%,
-    22%,
-    25%,
-    53%,
-    57%,
-    100% {
-      text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
-        0 0 40px var(--color-image-accent), 0 0 60px var(--color-image-accent),
-        0 0 10px var(--color-image-accent), 0 0 10px var(--color-image-accent);
-    }
-
-    20%,
-    24%,
-    55% {
-      text-shadow: none;
-    }
-  } */
-
   .miami {
     --font-heading: var(--font-miami);
 
@@ -140,12 +121,6 @@
     .gradient-overlay {
       display: block;
     }
-
-    /* h1 strong,
-    h2,
-    h3 {
-      animation: neonMiami 1.5s infinite alternate;
-    } */
   }
 
   .winter-wonderland {
@@ -356,5 +331,29 @@
       );
     }
     --color-image-accent: transparent;
+  }
+
+  .braille {
+    /* Sorry just a little troll 😅 */
+    --font-heading: var(--font-braille);
+    --font-sans: var(--font-braille);
+
+    --color-background: #fffce8;
+    --color-background-from: var(--color-neutral-100);
+    --color-background-to: var(--color-neutral-800);
+    --color-foreground: rgba(0, 0, 0, 0.4);
+    --color-highlight: rgba(0, 0, 0, 0.6);
+    --color-link: var(--color-highlight);
+    --color-link-decoration: var(--color-neutral-400);
+    --color-border: var(--color-neutral-200);
+    --color-accent-text: var(--color-neutral-900);
+    --color-image-background: #e4e2d2;
+    --color-image-accent: #fffce8;
+    --color-image-background-from: #f0e0ca;
+    --color-image-background-to: #fefadb;
+
+    .arobase {
+      display: none;
+    }
   }
 }

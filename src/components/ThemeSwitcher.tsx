@@ -75,29 +75,31 @@ export const ThemeSwitcher = (props: { className?: string }) => {
             const typeLabel = THEME_TYPES.find((t) => t.name === type)?.label;
             return (
               <CommandGroup heading={typeLabel} key={type}>
-                {themes?.map((theme) => {
-                  if (theme.name === "arc" && !isArc) return null;
-                  const Icon = theme.icon;
-                  const isActive = activeTheme.theme?.name === theme.name;
-                  return (
-                    <CommandItem
-                      key={theme.name}
-                      onSelect={() => {
-                        changeTheme(theme.name);
-                        setIsOpen(false);
-                      }}
-                      className={cn(isActive && "text-highlight")}
-                    >
-                      <Icon className={cn(!isActive && "opacity-80")} />
-                      {theme.label}
-                      {isActive && (
-                        <span className="px-1.5 text-[0.625rem] bg-highlight text-background rounded-md font-bold">
-                          ACTIVE
-                        </span>
-                      )}
-                    </CommandItem>
-                  );
-                })}
+                {themes
+                  ?.filter((t) => !t.hidden)
+                  .map((theme) => {
+                    if (theme.name === "arc" && !isArc) return null;
+                    const Icon = theme.icon;
+                    const isActive = activeTheme.theme?.name === theme.name;
+                    return (
+                      <CommandItem
+                        key={theme.name}
+                        onSelect={() => {
+                          changeTheme(theme.name);
+                          setIsOpen(false);
+                        }}
+                        className={cn(isActive && "text-highlight")}
+                      >
+                        <Icon className={cn(!isActive && "opacity-80")} />
+                        {theme.label}
+                        {isActive && (
+                          <span className="px-1.5 text-[0.625rem] bg-highlight text-background rounded-md font-bold">
+                            ACTIVE
+                          </span>
+                        )}
+                      </CommandItem>
+                    );
+                  })}
               </CommandGroup>
             );
           })}
