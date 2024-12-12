@@ -10,7 +10,7 @@ import {
   CommandItem,
   CommandDialog,
 } from "@/components/ui/command";
-import { LuMoreHorizontal } from "react-icons/lu";
+import { LuEllipsis } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import { THEME_TYPES, ThemeName, THEMES } from "@/themes";
 import { groupBy } from "remeda";
@@ -51,7 +51,7 @@ export const ThemeSwitcher = (props: { className?: string }) => {
           title="Search for a theme"
           aria-label="Search for a theme"
         >
-          <LuMoreHorizontal />
+          <LuEllipsis />
         </button>
         {THEMES.filter((t) => t.expose)
           .reverse()

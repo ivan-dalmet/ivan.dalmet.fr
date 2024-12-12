@@ -7,7 +7,7 @@ import {
   LuMonitor,
   LuMoon,
   LuMusic,
-  LuPalmtree,
+  LuTreePalm,
   LuSnowflake,
   LuSun,
   LuTreePine,
@@ -89,7 +89,7 @@ export const THEMES = [
   {
     name: "miami",
     label: "Miami Vibe",
-    icon: LuPalmtree,
+    icon: LuTreePalm,
     type: "other",
   },
   {
