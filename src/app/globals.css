@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    interpolate-size: allow-keywords;
+
     --color-neutral-50: #fbfaf8;
     --color-neutral-100: #f7f4f0;
     --color-neutral-200: #e8e4df;

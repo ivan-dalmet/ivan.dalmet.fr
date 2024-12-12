@@ -1,6 +1,6 @@
 "use client";
 
-import { THEMES } from "@/themes";
+import { ThemeName, THEMES } from "@/themes";
 import { useTheme } from "next-themes";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
@@ -17,7 +17,7 @@ export const SetupThemeFromSearchParams = () => {
       typeof theme === "string" &&
       values(THEMES)
         .map((t) => t.name)
-        .includes(theme)
+        .includes(theme as ThemeName)
     ) {
       setTheme(theme);
       router.replace(window.location.pathname);

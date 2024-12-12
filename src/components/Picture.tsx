@@ -5,22 +5,24 @@ import pictureSrc from "@/../public/ivan-dalmet.png";
 import santaHatSrc from "@/../public/santa-hat.svg";
 import { useState } from "react";
 import { useActiveTheme } from "@/lib/theme";
+import { useStoreAchievements } from "@/components/Achivements/store";
 
 export const Picture = () => {
   const { theme } = useActiveTheme();
+  const triggerAchievement = useStoreAchievements((s) => s.triggerAchievement);
   const [isLoaded, setIsLoaded] = useState(false);
   return (
     <div className="relative md:-translate-x-8">
-      <div className="blur-3xl opacity-20 bg-image-accent absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full" />
-      <div className="bg-image-background absolute w-[125%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-39.6%] rounded-full bg-gradient-to-t from-image-background-from to-image-background-to" />
+      <div className="absolute left-1/2 top-1/2 aspect-square w-[125%] translate-x-[-49.7%] translate-y-[-39.6%] rounded-full bg-image-accent opacity-20 blur-3xl" />
+      <div className="absolute left-1/2 top-1/2 aspect-square w-[125%] translate-x-[-49.7%] translate-y-[-39.6%] rounded-full bg-image-background bg-gradient-to-t from-image-background-from to-image-background-to" />
       {isLoaded && (
-        <div className="bg-image-accent absolute w-[70%] aspect-square top-1/2 left-1/2 translate-x-[-49.7%] translate-y-[-15%] rounded-full" />
+        <div className="absolute left-1/2 top-1/2 aspect-square w-[70%] translate-x-[-49.7%] translate-y-[-15%] rounded-full bg-image-accent" />
       )}
       {theme?.name === "christmas" && (
         <Image
           src={santaHatSrc}
           alt=""
-          className="absolute z-10 w-[50%] aspect-[129/97] top-[-8%] left-[13%]"
+          className="absolute left-[13%] top-[-8%] z-10 aspect-[129/97] w-[50%]"
         />
       )}
       <Image
@@ -31,6 +33,11 @@ export const Picture = () => {
         }}
         onError={() => {
           setIsLoaded(false);
+        }}
+        onClick={() => {
+          if (theme?.name === "romantic-love") {
+            triggerAchievement("love");
+          }
         }}
         src={pictureSrc}
         width={261}

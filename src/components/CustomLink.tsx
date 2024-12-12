@@ -7,8 +7,8 @@ export const CustomLink = (props: ComponentProps<typeof Link>) => {
     <Link
       {...props}
       className={cn(
-        "text-link underline decoration-wavy decoration-1 decoration-link-decoration hover:decoration-current underline-offset-2 transition-all hover:underline-offset-4 hover:text-accent-text",
-        props.className
+        "text-link underline decoration-link-decoration decoration-wavy decoration-1 underline-offset-2 transition-all hover:text-accent-text hover:decoration-current hover:underline-offset-4",
+        props.className,
       )}
     />
   );

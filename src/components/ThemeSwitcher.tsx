@@ -14,6 +14,7 @@ import { LuEllipsis } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import { THEME_TYPES, ThemeName, THEMES } from "@/themes";
 import { groupBy } from "remeda";
+import { useStoreAchievements } from "@/components/Achivements/store";
 
 const themeGroupByType = groupBy(THEMES, (t) => t.type);
 
@@ -21,6 +22,7 @@ export const ThemeSwitcher = (props: { className?: string }) => {
   const activeTheme = useActiveTheme();
   const isArc = useIsArc();
   const [isOpen, setIsOpen] = useState(false);
+  const triggerAchievement = useStoreAchievements((s) => s.triggerAchievement);
 
   const changeTheme = (theme: ThemeName) => {
     activeTheme.setTheme(theme);
@@ -31,22 +33,23 @@ export const ThemeSwitcher = (props: { className?: string }) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setIsOpen((open) => !open);
+        triggerAchievement("cmdk");
       }
     };
 
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [triggerAchievement]);
 
   return (
     <>
-      <div className={cn("rounded-full w-fit p-1 flex", props.className)}>
+      <div className={cn("flex w-fit rounded-full p-1", props.className)}>
         <button
           onClick={() => setIsOpen(true)}
           className={cn(
-            "opacity-70 text-base p-2 rounded-full border border-transparent",
+            "rounded-full border border-transparent p-2 text-base opacity-70",
             !activeTheme.theme?.expose &&
-              "text-link opacity-100 border-border bg-background"
+              "border-border bg-background text-link opacity-100",
           )}
           title="Search for a theme"
           aria-label="Search for a theme"
@@ -93,7 +96,7 @@ export const ThemeSwitcher = (props: { className?: string }) => {
                         <Icon className={cn(!isActive && "opacity-80")} />
                         {theme.label}
                         {isActive && (
-                          <span className="px-1.5 text-[0.625rem] bg-highlight text-background rounded-md font-bold">
+                          <span className="rounded-md bg-highlight px-1.5 text-[0.625rem] font-bold text-background">
                             ACTIVE
                           </span>
                         )}
@@ -120,8 +123,8 @@ const ThemeButton = (props: {
   return (
     <button
       className={cn(
-        "opacity-70 text-base p-2 rounded-full border border-transparent",
-        props.isActive && "text-link opacity-100 border-border bg-background"
+        "rounded-full border border-transparent p-2 text-base opacity-70",
+        props.isActive && "border-border bg-background text-link opacity-100",
       )}
       disabled={props.isActive}
       onClick={() => props.onClick()}

@@ -10,7 +10,7 @@ export const Shadow = () => {
 
   return (
     <Image
-      className="fixed min-w-[500px] pointer-events-none inset-0 object-contain object-left-top z-10 opacity-10 -scale-x-100"
+      className="pointer-events-none fixed inset-0 z-10 min-w-[500px] -scale-x-100 object-contain object-left-top opacity-10"
       src="/shadow-palm-tree.png"
       alt=""
       width={5000}

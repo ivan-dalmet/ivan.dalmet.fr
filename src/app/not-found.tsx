@@ -2,9 +2,9 @@ import { CustomLink } from "@/components/CustomLink";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center p-4 text-balance text-center gap-4">
-      <p className="text-xs -mb-3">ivan.dalmet.fr</p>
-      <h1 className="text-4xl font-heading text-highlight">Page Not Found</h1>
+    <div className="flex flex-1 flex-col items-center justify-center gap-4 text-balance p-4 text-center">
+      <p className="-mb-3 text-xs">ivan.dalmet.fr</p>
+      <h1 className="font-heading text-4xl text-highlight">Page Not Found</h1>
       <p>Looking for something? There is only one page here</p>
       <CustomLink href={"/"} className="">
         TAKE ME HOME

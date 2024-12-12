@@ -9,6 +9,7 @@ import { Snow } from "@/components/Snow";
 import { Shadow } from "@/components/Shadow";
 import { THEMES } from "@/themes";
 import { SetupThemeFromSearchParams } from "@/app/SetupThemeFromSearchParams";
+import { Achievements } from "@/components/Achivements";
 
 const fontArgestaDisplay = localFont({
   src: "./fonts/argestadisplay-regular-webfont.woff",
@@ -71,17 +72,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} ${fontBraille.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} ${fontBraille.variable} overflow-x-hidden bg-background text-foreground antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col overflow-x-hidden min-h-svh">
+      <body className="flex min-h-svh flex-col overflow-x-hidden">
         <ThemeProvider attribute="class" themes={THEMES.map((t) => t.name)}>
-          <div className="gradient-overlay fixed inset-0 bg-gradient-to-t from-background-from to-background-to mix-blend-overlay pointer-events-none" />
-          <div className="fixed z-50 bg-[url('/noise.png')] bg-repeat inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none"></div>
-          <div className="flex flex-col flex-1 relative">{children}</div>
+          <div className="gradient-overlay pointer-events-none fixed inset-0 bg-gradient-to-t from-background-from to-background-to mix-blend-overlay" />
+          <div className="pointer-events-none fixed inset-0 z-50 bg-[url('/noise.png')] bg-repeat opacity-[0.03] dark:opacity-[0.02]"></div>
+          <div className="relative flex flex-1 flex-col">{children}</div>
           <ThemeSwitcher className="fixed bottom-3 right-3 z-40" />
           <Snow />
           <Shadow />
+
+          <Achievements />
           <Suspense>
             <SetupThemeFromSearchParams />
           </Suspense>

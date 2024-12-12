@@ -11,7 +11,10 @@ export const useActiveTheme = () => {
     setIsHydrated(true);
   }, [theme]);
 
-  return { theme: THEMES.find((t) => t.name === hydratedTheme), setTheme };
+  return {
+    theme: THEMES.find((t) => t.name === hydratedTheme),
+    setTheme,
+  };
 };
 
 export const useIsArc = () => {
@@ -20,7 +23,7 @@ export const useIsArc = () => {
   useEffect(() => {
     const detectArc = () => {
       const arcDetected = !!getComputedStyle(
-        document.documentElement
+        document.documentElement,
       ).getPropertyValue("--arc-palette-title");
       if (arcDetected) {
         setIsArc(arcDetected);
