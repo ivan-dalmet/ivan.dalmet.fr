@@ -58,8 +58,7 @@ export const THEMES = [
     name: "christmas",
     label: "Oh Oh Oh! Merry Christmas",
     icon: LuCandyCane,
-    type: "recommended",
-    expose: true,
+    type: "other"
   } as const,
   {
     name: "bearstudio",
@@ -89,7 +88,8 @@ export const THEMES = [
     name: "miami",
     label: "Miami Vibe",
     icon: LuTreePalm,
-    type: "other",
+    type: "recommended",
+    expose: true,
   } as const,
   {
     name: "cozy-fireplace",
