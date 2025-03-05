@@ -55,10 +55,11 @@ export const THEMES = [
     expose: true,
   } as const,
   {
-    name: "christmas",
-    label: "Oh Oh Oh! Merry Christmas",
-    icon: LuCandyCane,
-    type: "other"
+    name: "miami",
+    label: "Miami Vibe",
+    icon: LuTreePalm,
+    type: "recommended",
+    expose: true,
   } as const,
   {
     name: "bearstudio",
@@ -85,11 +86,10 @@ export const THEMES = [
     type: "recommended",
   } as const,
   {
-    name: "miami",
-    label: "Miami Vibe",
-    icon: LuTreePalm,
-    type: "recommended",
-    expose: true,
+    name: "christmas",
+    label: "Oh Oh Oh! Merry Christmas",
+    icon: LuCandyCane,
+    type: "other"
   } as const,
   {
     name: "cozy-fireplace",
