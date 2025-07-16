@@ -35,7 +35,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h2 className="font-heading text-xl text-highlight">Find me on...</h2>
+          <h2 className="font-heading text-xl text-highlight">Find me on</h2>
           <ul className="flex list-disc flex-col gap-2 pl-5">
             <li>
               Linkedin{" "}
