@@ -35,14 +35,8 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h2 className="font-heading text-xl text-highlight">Keep in touch</h2>
+          <h2 className="font-heading text-xl text-highlight">Find me on</h2>
           <ul className="flex list-disc flex-col gap-2 pl-5">
-            <li>
-              BlueSky{" "}
-              <CustomLink href="https://bsky.app/profile/ivan.dalmet.fr">
-                <span className="arobase">@</span>ivan.dalmet.fr
-              </CustomLink>
-            </li>
             <li>
               Linkedin{" "}
               <CustomLink href="https://www.linkedin.com/in/ivandalmet/">
@@ -53,6 +47,18 @@ export default function Home() {
               X{" "}
               <CustomLink href="https://x.com/IvanDalmet">
                 <span className="arobase">@</span>ivandalmet
+              </CustomLink>
+            </li>
+            <li>
+              BlueSky{" "}
+              <CustomLink href="https://bsky.app/profile/ivan.dalmet.fr">
+                <span className="arobase">@</span>ivan.dalmet.fr
+              </CustomLink>
+            </li>
+            <li>
+              GitHub{" "}
+              <CustomLink href="https://github.com/ivan-dalmet">
+                <span className="arobase">@</span>ivan-dalmet
               </CustomLink>
             </li>
           </ul>
