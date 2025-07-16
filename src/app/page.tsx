@@ -58,7 +58,7 @@ export default function Home() {
             <li>
               GitHub{" "}
               <CustomLink href="https://github.com/ivan-dalmet">
-                ivan-dalmet
+                <span className="arobase">@</span>ivan-dalmet
               </CustomLink>
             </li>
           </ul>
