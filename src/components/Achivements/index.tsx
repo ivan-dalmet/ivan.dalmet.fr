@@ -32,6 +32,9 @@ export const Achievements = () => {
       if (activeTheme.theme?.name === "christmas") {
         triggerAchievement("christmas");
       }
+      if (activeTheme.theme?.name === "halloween") {
+        triggerAchievement("spooky");
+      }
     }, 2500);
 
     return () => clearTimeout(timeout);

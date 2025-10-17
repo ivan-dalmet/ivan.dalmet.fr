@@ -12,6 +12,7 @@ import {
   LuSun,
   LuTreePine,
 } from "react-icons/lu";
+import { GiPumpkinMask } from "react-icons/gi";
 import { IconArc } from "@/components/IconArc";
 import { IconForkIt } from "@/components/IconForkIt";
 import { IconBearStudio } from "@/components/IconBearStudio";
@@ -54,13 +55,7 @@ export const THEMES = [
     type: "default",
     expose: true,
   } as const,
-  {
-    name: "miami",
-    label: "Miami Vibe",
-    icon: LuTreePalm,
-    type: "recommended",
-    expose: true,
-  } as const,
+
   {
     name: "bearstudio",
     label: "BearStudio",
@@ -86,10 +81,23 @@ export const THEMES = [
     type: "recommended",
   } as const,
   {
+    name: "miami",
+    label: "Miami Vibe",
+    icon: LuTreePalm,
+    type: "other",
+  } as const,
+  {
+    name: "halloween",
+    label: "Spooky Halloween",
+    icon: GiPumpkinMask,
+    type: "other",
+    expose: true,
+  } as const,
+  {
     name: "christmas",
     label: "Oh Oh Oh! Merry Christmas",
     icon: LuCandyCane,
-    type: "other"
+    type: "other",
   } as const,
   {
     name: "cozy-fireplace",

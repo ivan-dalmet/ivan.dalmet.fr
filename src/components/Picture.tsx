@@ -3,6 +3,7 @@
 import Image from "next/image";
 import pictureSrc from "@/../public/ivan-dalmet.png";
 import santaHatSrc from "@/../public/santa-hat.svg";
+import hallowenHatSrc from "@/../public/halloween-hat.png";
 import { useState } from "react";
 import { useActiveTheme } from "@/lib/theme";
 import { useStoreAchievements } from "@/components/Achivements/store";
@@ -22,7 +23,14 @@ export const Picture = () => {
         <Image
           src={santaHatSrc}
           alt=""
-          className="absolute left-[13%] top-[-8%] z-10 aspect-[129/97] w-[50%]"
+          className="pointer-events-none absolute left-[13%] top-[-8%] z-10 aspect-[129/97] w-[50%]"
+        />
+      )}
+      {theme?.name === "halloween" && (
+        <Image
+          src={hallowenHatSrc}
+          alt=""
+          className="pointer-events-none absolute left-[-2%] top-[-22%] z-10 aspect-square w-[110%] max-w-none"
         />
       )}
       <Image

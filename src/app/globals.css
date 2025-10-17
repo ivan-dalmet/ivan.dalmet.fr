@@ -358,4 +358,36 @@
       display: none;
     }
   }
+
+  .halloween {
+    color-scheme: dark;
+    --color-background: #0c0c0c;
+    --color-background-from: #f0d6a8;
+    --color-background-to: #ff7518;
+    --color-foreground: #f0d6a8;
+    --color-highlight: #ff7518;
+    --color-link: #ff7518;
+    --color-link-decoration: #ff7518;
+    --color-border: rgba(255, 117, 24, 0.1);
+    --color-accent-text: #ffb347;
+    --color-image-background: #3b0009;
+    --color-image-accent: #ff7518;
+    --color-image-background-from: #3b0009;
+    --color-image-background-to: #000000;
+
+    .gradient-overlay {
+      display: block;
+      animation: flicker 3s infinite ease-in-out;
+    }
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }

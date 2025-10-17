@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { GiPumpkinMask } from "react-icons/gi";
 import { LuCandyCane, LuCommand, LuHeart, LuUserPlus } from "react-icons/lu";
 
 export const allAchievements = {
@@ -15,6 +16,11 @@ export const allAchievements = {
   christmas: {
     icon: <LuCandyCane />,
     title: "Oh! Oh! Oh! Merry Christmas",
+    description: undefined,
+  },
+  spooky: {
+    icon: <GiPumpkinMask />,
+    title: "Bouh!",
     description: undefined,
   },
   love: {
