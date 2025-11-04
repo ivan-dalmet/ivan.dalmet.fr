@@ -91,13 +91,13 @@ export const THEMES = [
     label: "Spooky Halloween",
     icon: GiPumpkinMask,
     type: "other",
-    expose: true,
   } as const,
   {
     name: "christmas",
     label: "Oh Oh Oh! Merry Christmas",
     icon: LuCandyCane,
     type: "other",
+    expose: true,
   } as const,
   {
     name: "cozy-fireplace",
