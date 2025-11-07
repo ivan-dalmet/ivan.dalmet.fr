@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInputEvent } from "./use-input-event";
 
 export const useSecretCode = (
@@ -8,20 +8,27 @@ export const useSecretCode = (
   const [count, setCount] = useState(0);
   const [success, setSuccess] = useState(false);
   const key = useInputEvent();
+  const countRef = useRef(count);
+  countRef.current = count;
+  const onTriggerRef = useRef(onTrigger);
+  onTriggerRef.current = onTrigger;
 
   useEffect(() => {
     if (key == null) return;
-    if (key !== secretCode[count]) {
+    if (key !== secretCode[countRef.current]) {
       setCount(0);
       return;
     }
 
-    setCount((state) => state + 1);
-    if (count + 1 === secretCode.length) {
-      onTrigger?.();
+    setCount((state) => {
+      return state + 1;
+    });
+    if (countRef.current + 1 === secretCode.length) {
+      onTriggerRef.current?.();
       setSuccess(true);
     }
-  }, [key]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key, secretCode.join(",")]);
 
   return success;
 };

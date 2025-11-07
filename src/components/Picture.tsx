@@ -54,7 +54,7 @@ export const Picture = () => {
           {!achivements.love?.status && (
             <CursorFollow>
               <div className="whitespace-nowrap rounded-lg bg-highlight px-2 py-1 text-sm text-background shadow-lg">
-                Say "Hi" 💋
+                Say &quot;Hi&quot; 💋
               </div>
             </CursorFollow>
           )}
