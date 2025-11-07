@@ -4,6 +4,7 @@ import { LuCandyCane, LuCommand, LuHeart, LuUserPlus } from "react-icons/lu";
 import { MdBlind } from "react-icons/md";
 import { SiHackaday } from "react-icons/si";
 import { BiSolidTerminal } from "react-icons/bi";
+import { FaGamepad } from "react-icons/fa6";
 
 export const allAchievements = {
   firstVisite: {
@@ -39,6 +40,12 @@ export const allAchievements = {
   cmdk: {
     icon: <LuCommand />,
     title: () => "CMD+K POWER USER",
+    hint: undefined,
+    displayIfNotUnlocked: true,
+  },
+  konami: {
+    icon: <FaGamepad />,
+    title: () => "G33K! 🤓",
     hint: undefined,
     displayIfNotUnlocked: true,
   },

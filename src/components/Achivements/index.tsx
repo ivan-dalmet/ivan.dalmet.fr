@@ -8,6 +8,7 @@ import { allAchievements } from "./allAchievements";
 import { Achievement } from "./Achivement";
 import { useActiveTheme } from "@/lib/theme";
 import { z } from "zod";
+import { useSecretCode } from "@/lib/use-secret-code";
 
 export const Achievements = () => {
   const activeTheme = useActiveTheme();
@@ -15,6 +16,23 @@ export const Achievements = () => {
   const achivements = useStoreAchievements((s) => s.achivements);
   const init = useStoreAchievements((s) => s.init);
   const triggerAchievement = useStoreAchievements((s) => s.triggerAchievement);
+  useSecretCode(
+    [
+      "ArrowUp",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowLeft",
+      "ArrowRight",
+      "b",
+      "a",
+    ],
+    () => {
+      triggerAchievement("konami");
+    },
+  );
 
   // Init page view
   useEffect(() => {
