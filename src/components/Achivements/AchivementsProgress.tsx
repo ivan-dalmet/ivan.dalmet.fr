@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { LuTrophy } from "react-icons/lu";
+import { FaQuestion } from "react-icons/fa6";
 import { entries, values } from "remeda";
 
 export const AchievementsProgress = () => {
@@ -52,6 +53,7 @@ export const AchievementsProgress = () => {
         <div className="flex flex-col pb-24">
           {entries(allAchievements).map(([name, achievement]) => {
             const unlocked = !!userAchievements[name]?.status;
+            const iconVisible = unlocked || !!achievement.displayIfNotUnlocked;
             const isNew = !!userAchievements[name]?.isNew;
             return (
               <div
@@ -64,14 +66,16 @@ export const AchievementsProgress = () => {
                     !unlocked && "opacity-30 grayscale",
                   )}
                 >
-                  {achievement.icon}
+                  {iconVisible ? achievement.icon : <FaQuestion />}
                 </div>
                 <div className="flex-1 text-sm">
                   <div className="flex items-center">
                     <h4
                       className={cn("flex-1", !unlocked && "flex opacity-60")}
                     >
-                      {unlocked ? achievement.title : "???"}
+                      {unlocked
+                        ? achievement.title(userAchievements[name]?.payload)
+                        : "???"}
                     </h4>
                     {!!isNew && (
                       <span className="rounded-full border-2 border-background bg-highlight px-1.5 text-[10px] font-bold text-background">
@@ -79,8 +83,8 @@ export const AchievementsProgress = () => {
                       </span>
                     )}
                   </div>
-                  {unlocked && !!achievement.description && (
-                    <p>{achievement.description}</p>
+                  {!unlocked && !!achievement.hint && (
+                    <p className="text-xs">{achievement.hint}</p>
                   )}
                 </div>
               </div>

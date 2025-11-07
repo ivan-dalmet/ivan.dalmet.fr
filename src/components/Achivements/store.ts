@@ -9,7 +9,10 @@ type State = {
   isReady: boolean;
   achivements: AchievementsSchema;
   init: () => void;
-  triggerAchievement: (achivementName: AchievementNameSchema) => void;
+  triggerAchievement: (
+    achivementName: AchievementNameSchema,
+    payload?: Record<string, string>,
+  ) => void;
   viewAchievementsProgress: () => void;
 };
 
@@ -31,7 +34,7 @@ export const useStoreAchievements = create<State>()((set, get) => ({
       achivements,
     });
   },
-  triggerAchievement: (achivementName) => {
+  triggerAchievement: (achivementName, payload) => {
     const achivements = clone(get().achivements);
 
     // Clean up other viewed
@@ -44,7 +47,11 @@ export const useStoreAchievements = create<State>()((set, get) => ({
       });
 
     if (achivements[achivementName]?.status === undefined) {
-      achivements[achivementName] = { status: "display", isNew: true };
+      achivements[achivementName] = {
+        status: "display",
+        isNew: true,
+        payload,
+      };
     }
 
     set({

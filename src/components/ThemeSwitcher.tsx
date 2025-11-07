@@ -71,7 +71,14 @@ export const ThemeSwitcher = (props: { className?: string }) => {
           })}
       </div>
       <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
-        <CommandInput placeholder="Search a theme..." />
+        <CommandInput
+          placeholder="Search a theme..."
+          onValueChange={(value) => {
+            if (value.trim() === "H4CK3R") {
+              triggerAchievement("hacker");
+            }
+          }}
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           {Object.entries(themeGroupByType).map(([type, themes]) => {
