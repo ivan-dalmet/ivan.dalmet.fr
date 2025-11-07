@@ -33,6 +33,7 @@ export const useStoreAchievements = create<State>()((set, get) => ({
     set({
       achivements,
     });
+    setToLocalStorage(achivements);
   },
   triggerAchievement: (achivementName, payload) => {
     const achivements = clone(get().achivements);
@@ -62,13 +63,17 @@ export const useStoreAchievements = create<State>()((set, get) => ({
   },
 
   viewAchievementsProgress: () => {
-    const achivements = clone(get().achivements);
+    const achivements = entries(clone(get().achivements)).reduce(
+      (acc, [name, achivement]) => {
+        return { ...acc, [name]: { ...achivement, isNew: false } };
+      },
+      {},
+    );
 
     set({
-      achivements: entries(achivements).reduce((acc, [name, achivement]) => {
-        return { ...acc, [name]: { ...achivement, isNew: false } };
-      }, {}),
+      achivements,
     });
+    setToLocalStorage(achivements);
   },
 }));
 
