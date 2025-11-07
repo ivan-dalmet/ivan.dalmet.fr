@@ -7,6 +7,7 @@ import { useStoreAchievements } from "./store";
 import { allAchievements } from "./allAchievements";
 import { Achievement } from "./Achivement";
 import { useActiveTheme } from "@/lib/theme";
+import { z } from "zod";
 
 export const Achievements = () => {
   const activeTheme = useActiveTheme();
@@ -18,6 +19,16 @@ export const Achievements = () => {
   // Init page view
   useEffect(() => {
     init();
+    console.log("Did you tried 'H4CK3R'?");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).myNameIs = (name?: string) => {
+      const nameParsed = z.string().trim().min(1).safeParse(name);
+      if (nameParsed.error) {
+        console.error("You don't have a name?");
+        return;
+      }
+      triggerAchievement("consoleFunction", { name: nameParsed.data });
+    };
 
     const timeout = setTimeout(() => {
       triggerAchievement("firstVisite");
@@ -34,6 +45,9 @@ export const Achievements = () => {
       }
       if (activeTheme.theme?.name === "halloween") {
         triggerAchievement("spooky");
+      }
+      if (activeTheme.theme?.name === "braille") {
+        triggerAchievement("braille");
       }
     }, 2500);
 
@@ -53,7 +67,9 @@ export const Achievements = () => {
       key={achievementToDisplay.name}
       icon={achievementToDisplay.icon}
     >
-      {achievementToDisplay.title}
+      {achievementToDisplay.title(
+        achivements[achievementToDisplay.name]?.payload,
+      )}
     </Achievement>
   );
 };

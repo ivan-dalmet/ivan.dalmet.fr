@@ -1,6 +1,7 @@
 import { CustomLink } from "@/components/CustomLink";
 import { Signature } from "@/components/Signature";
 import { Picture } from "@/components/Picture";
+import { AchievementsProgress } from "@/components/Achivements/AchivementsProgress";
 
 export default function Home() {
   return (
@@ -67,6 +68,7 @@ export default function Home() {
         <Signature className="w-32" />
       </div>
       <Picture />
+      <AchievementsProgress />
     </div>
   );
 }

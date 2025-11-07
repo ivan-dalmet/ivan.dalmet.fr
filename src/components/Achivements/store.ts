@@ -3,13 +3,17 @@ import {
   AchievementsSchema,
 } from "@/components/Achivements/schema";
 import { create } from "zustand";
-import { clone, keys } from "remeda";
+import { clone, entries, keys } from "remeda";
 
 type State = {
   isReady: boolean;
   achivements: AchievementsSchema;
   init: () => void;
-  triggerAchievement: (achivementName: AchievementNameSchema) => void;
+  triggerAchievement: (
+    achivementName: AchievementNameSchema,
+    payload?: Record<string, string>,
+  ) => void;
+  viewAchievementsProgress: () => void;
 };
 
 export const useStoreAchievements = create<State>()((set, get) => ({
@@ -30,7 +34,7 @@ export const useStoreAchievements = create<State>()((set, get) => ({
       achivements,
     });
   },
-  triggerAchievement: (achivementName) => {
+  triggerAchievement: (achivementName, payload) => {
     const achivements = clone(get().achivements);
 
     // Clean up other viewed
@@ -43,7 +47,11 @@ export const useStoreAchievements = create<State>()((set, get) => ({
       });
 
     if (achivements[achivementName]?.status === undefined) {
-      achivements[achivementName] = { status: "display" };
+      achivements[achivementName] = {
+        status: "display",
+        isNew: true,
+        payload,
+      };
     }
 
     set({
@@ -51,6 +59,16 @@ export const useStoreAchievements = create<State>()((set, get) => ({
       achivements,
     });
     setToLocalStorage(achivements);
+  },
+
+  viewAchievementsProgress: () => {
+    const achivements = clone(get().achivements);
+
+    set({
+      achivements: entries(achivements).reduce((acc, [name, achivement]) => {
+        return { ...acc, [name]: { ...achivement, isNew: false } };
+      }, {}),
+    });
   },
 }));
 
