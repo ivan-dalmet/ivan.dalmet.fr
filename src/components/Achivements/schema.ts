@@ -14,6 +14,7 @@ export type AchievementSchema = z.infer<typeof AchievementSchema>;
 export const AchievementSchema = z
   .object({
     status: AchievementStatusSchema.catch("viewed"),
+    isNew: z.boolean().catch(false),
   })
   .optional()
   .catch(undefined);

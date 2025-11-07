@@ -8,11 +8,6 @@ export const allAchievements = {
     title: "New Visitor ⋅ Welcome!",
     description: undefined,
   },
-  cmdk: {
-    icon: <LuCommand />,
-    title: "CMD+K POWER USER",
-    description: undefined,
-  },
   christmas: {
     icon: <LuCandyCane />,
     title: "Oh! Oh! Oh! Merry Christmas",
@@ -26,6 +21,11 @@ export const allAchievements = {
   love: {
     icon: <LuHeart />,
     title: "Hello there 💋",
+    description: undefined,
+  },
+  cmdk: {
+    icon: <LuCommand />,
+    title: "CMD+K POWER USER",
     description: undefined,
   },
 } satisfies Record<
