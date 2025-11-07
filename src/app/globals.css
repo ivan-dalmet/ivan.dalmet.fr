@@ -380,6 +380,115 @@
       animation: flicker 3s infinite ease-in-out;
     }
   }
+
+  .hacker {
+    color-scheme: dark;
+
+    --font-heading: var(--font-VT323);
+
+    /* Palette (P1 green phosphor vibes) */
+    --color-background: #061006; /* near-black with green tint */
+    --color-background-from: #040a04;
+    --color-background-to: #0a1a0a;
+    --color-foreground: #b7ffb7; /* soft green text */
+    --color-highlight: #39ff14; /* bright scanline green */
+    --color-link: var(--color-highlight);
+    --color-link-decoration: rgba(57, 255, 20, 0.6);
+    --color-border: rgba(57, 255, 20, 0.15);
+
+    --color-accent-text: #e6ffe6;
+    --color-image-background: #0e2313;
+    --color-image-accent: #39ff14;
+    --color-image-background-from: #061006;
+    --color-image-background-to: #0e2313;
+
+    .gradient-overlay {
+      display: none;
+    }
+
+    /* Subtle glow + scanlines */
+    :is(h1, h2, h3, h4, h5, h6, strong, b) {
+      text-shadow:
+        0 0 1px rgba(57, 255, 20, 0.3),
+        0 0 6px rgba(57, 255, 20, 0.12);
+      letter-spacing: 0.02em;
+    }
+
+    /* Body copy light bloom */
+    p,
+    li,
+    code,
+    kbd,
+    samp {
+      text-shadow: 0 0 1px rgba(57, 255, 20, 0.2);
+    }
+
+    /* Focus ring like a cursor phosphor trail */
+    :focus-visible {
+      outline: 2px solid rgba(57, 255, 20, 0.6);
+      outline-offset: 2px;
+      box-shadow: 0 0 12px rgba(57, 255, 20, 0.25);
+    }
+
+    ::selection {
+      background: rgba(57, 255, 20, 0.25);
+      color: var(--color-highlight);
+    }
+
+    body {
+      position: relative;
+      overflow: hidden;
+      background-image: radial-gradient(
+        120% 80% at 50% 50%,
+        rgba(57, 255, 20, 0.05) 0%,
+        transparent 60%
+      );
+      animation: crt-flicker 2s infinite steps(60);
+    }
+    body::before {
+      /* scanlines */
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6) 0,
+        rgba(0, 0, 0, 0.6) 3px,
+        transparent 3px,
+        transparent 6px
+      );
+      background-size: 100% 6px;
+      mix-blend-mode: multiply;
+      opacity: 0.45;
+      animation: crt-scan 100s linear infinite;
+    }
+    body::after {
+      /* vignette */
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(
+        80% 60% at 50% 50%,
+        transparent 60%,
+        rgba(0, 0, 0, 0.35) 100%
+      );
+    }
+
+    /* caret */
+    h1 strong::after {
+      content: "";
+      display: inline-block;
+      width: 0.6em;
+      height: 1em;
+      margin-left: 0.1em;
+      margin-bottom: -0.05em;
+      background: var(--color-highlight);
+      vertical-align: -0.1em;
+      animation: crt-cursor 1s steps(2) infinite;
+    }
+  }
 }
 
 @keyframes flicker {
@@ -388,6 +497,34 @@
     opacity: 1;
   }
   50% {
+    opacity: 0;
+  }
+}
+
+@keyframes crt-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+@keyframes crt-scan {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: 100%;
+  }
+}
+@keyframes crt-cursor {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
     opacity: 0;
   }
 }

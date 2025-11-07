@@ -75,6 +75,7 @@ export const ThemeSwitcher = (props: { className?: string }) => {
           placeholder="Search a theme..."
           onValueChange={(value) => {
             if (value.trim() === "H4CK3R") {
+              changeTheme("hacker");
               triggerAchievement("hacker");
             }
           }}

@@ -12,6 +12,7 @@ import {
   LuSun,
   LuTreePine,
 } from "react-icons/lu";
+import { BiSolidTerminal } from "react-icons/bi";
 import { GiPumpkinMask } from "react-icons/gi";
 import { IconArc } from "@/components/IconArc";
 import { IconForkIt } from "@/components/IconForkIt";
@@ -98,6 +99,13 @@ export const THEMES = [
     icon: LuCandyCane,
     type: "other",
     expose: true,
+  } as const,
+  {
+    name: "hacker",
+    label: "H4CKER",
+    icon: BiSolidTerminal,
+    type: "other",
+    hidden: true,
   } as const,
   {
     name: "cozy-fireplace",

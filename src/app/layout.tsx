@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { Tomorrow, Rubik } from "next/font/google";
+import { Tomorrow, Rubik, VT323 } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
@@ -28,6 +28,11 @@ const fontMiami = localFont({
 });
 const fontTomorrow = Tomorrow({
   variable: "--font-tomorrow",
+  subsets: ["latin"],
+  weight: "400",
+});
+const fontVT323 = VT323({
+  variable: "--font-VT323",
   subsets: ["latin"],
   weight: "400",
 });
@@ -72,10 +77,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} ${fontBraille.variable} overflow-x-hidden bg-background text-foreground antialiased`}
+      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} ${fontBraille.variable} ${fontVT323.variable} overflow-x-hidden bg-background text-foreground antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-svh flex-col overflow-x-hidden">
+      <body className="relative flex min-h-svh flex-col overflow-x-hidden">
         <ThemeProvider attribute="class" themes={THEMES.map((t) => t.name)}>
           <div className="gradient-overlay pointer-events-none fixed inset-0 bg-gradient-to-t from-background-from to-background-to mix-blend-overlay" />
           <div className="pointer-events-none fixed inset-0 z-50 bg-[url('/noise.png')] bg-repeat opacity-[0.03] dark:opacity-[0.02]"></div>
