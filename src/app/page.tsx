@@ -2,6 +2,7 @@ import { CustomLink } from "@/components/CustomLink";
 import { Signature } from "@/components/Signature";
 import { Picture } from "@/components/Picture";
 import { AchievementsProgress } from "@/components/Achivements/AchivementsProgress";
+import { ForkItTicketHunt } from "@/components/ForkItTicketsHunt";
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
             <p>Enjoying life in Rouen, FRANCE</p>
           </div>
         </div>
+
+        <ForkItTicketHunt />
 
         <div className="flex flex-col gap-3">
           <h2 className="font-heading text-xl text-highlight">Find me on</h2>
