@@ -5,8 +5,7 @@ import { useActiveTheme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 import { type SVGProps } from "react";
 
-const FORKIT_TICKET_HUNT_LINK =
-  "https://forkit-tickets-hunt-ces2025.vercel.app/app/achievements/complete?id=cmi3d8nac0009l204k9a4cdeu";
+const FORKIT_TICKET_HUNT_LINK = "";
 
 const TicketIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
