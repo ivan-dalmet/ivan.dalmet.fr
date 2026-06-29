@@ -191,6 +191,9 @@
   .peinture {
     /* Impressionist coastal oil painting (peinture.app):
        misty blue sky, slate cliffs, sage greens and warm sand. */
+    --font-sans: var(--font-inter);
+    --font-heading: var(--font-inter);
+
     --color-background: #e9edef;
     --color-background-from: #c7d5db;
     --color-background-to: #e7ddca;
