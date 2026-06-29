@@ -61,7 +61,7 @@ export const Picture = () => {
         </CursorProvider>
       )}
       <Image
-        className="relative"
+        className="relative h-auto"
         priority
         onLoad={() => {
           setIsLoaded(true);

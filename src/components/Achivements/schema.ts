@@ -22,5 +22,5 @@ export const AchievementSchema = z
 
 export type AchievementsSchema = z.infer<typeof AchievementsSchema>;
 export const AchievementsSchema = z
-  .record(AchievementNameSchema, AchievementSchema)
+  .partialRecord(AchievementNameSchema, AchievementSchema)
   .catch({});
