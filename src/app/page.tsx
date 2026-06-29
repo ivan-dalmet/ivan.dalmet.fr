@@ -17,6 +17,10 @@ export default function Home() {
           </h1>
           <div className="flex flex-col gap-2">
             <p>
+              Co-founder and CTO{" "}
+              <CustomLink href="https://peinture.app">Peinture</CustomLink>
+            </p>
+            <p>
               Co-founder and Lead Designer of{" "}
               <CustomLink href="https://bearstudio.fr">BearStudio</CustomLink>
             </p>
