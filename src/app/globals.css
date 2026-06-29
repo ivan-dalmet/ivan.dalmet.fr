@@ -191,8 +191,8 @@
   .peinture {
     /* Impressionist coastal oil painting (peinture.app):
        misty blue sky, slate cliffs, sage greens and warm sand. */
-    --font-sans: var(--font-inter);
-    --font-heading: var(--font-inter);
+    --font-sans: var(--font-manrope);
+    --font-heading: var(--font-manrope);
 
     --color-background: #e9edef;
     --color-background-from: #c7d5db;
@@ -204,12 +204,24 @@
     --color-border: rgba(85, 101, 110, 0.18);
     --color-accent-text: #5f7468;
     --color-image-background: #93a9b6;
-    --color-image-accent: #c8a974;
+    --color-image-accent: transparent;
     --color-image-background-from: #aebcc0;
     --color-image-background-to: #d4c4a3;
 
+    /* Page background: peinture.app's misty light gradient */
     .gradient-overlay {
       display: block;
+      background-image: url("/peinture-bg.jpg");
+      background-size: cover;
+      background-position: bottom left;
+      mix-blend-mode: normal;
+    }
+
+    /* Round backdrop behind the portrait: the peinture.app painting */
+    .bg-image-background {
+      background-image: url("/peinture-painting.jpg");
+      background-size: cover;
+      background-position: center;
     }
   }
 

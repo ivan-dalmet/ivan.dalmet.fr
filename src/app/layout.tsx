@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { Tomorrow, Rubik, VT323, Inter } from "next/font/google";
+import { Tomorrow, Rubik, VT323, Manrope } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
@@ -41,8 +41,8 @@ const fontRubik = Rubik({
   subsets: ["latin"],
   weight: "700",
 });
-const fontInter = Inter({
-  variable: "--font-inter",
+const fontManrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 const fontTrashhand = localFont({
@@ -81,7 +81,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} ${fontBraille.variable} ${fontVT323.variable} ${fontInter.variable} overflow-x-hidden bg-background text-foreground antialiased`}
+      className={`${fontArgestaDisplay.variable} ${fontBasierCircleMono.variable} ${fontMiami.variable} ${fontTomorrow.variable} ${fontTrashhand.variable} ${fontRubik.variable} ${fontBraille.variable} ${fontVT323.variable} ${fontManrope.variable} overflow-x-hidden bg-background text-foreground antialiased`}
       suppressHydrationWarning
     >
       <body className="relative flex min-h-svh flex-col overflow-x-hidden">
