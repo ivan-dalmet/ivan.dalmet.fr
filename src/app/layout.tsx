@@ -57,9 +57,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Ivan Dalmet - Lead Designer, UI & UX - Rouen, France",
+  title: "Ivan Dalmet - CTO, UI & UX - Rouen, France",
   description:
-    "Hi, I'm Ivan, co-founder and lead designer of BearStudio in Rouen, FRANCE",
+    "Hi, I'm Ivan, co-founder and CTO of Peinture.app in Rouen, FRANCE",
   robots: { index: true, follow: true },
   icons: {
     shortcut: "/favicon-96x96.png",
