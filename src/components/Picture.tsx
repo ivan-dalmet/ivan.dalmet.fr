@@ -61,7 +61,7 @@ export const Picture = () => {
         </CursorProvider>
       )}
       <Image
-        className="relative h-auto"
+        className="relative"
         priority
         onLoad={() => {
           setIsLoaded(true);
@@ -76,7 +76,7 @@ export const Picture = () => {
         }}
         src={pictureSrc}
         width={261}
-        height={396}
+        height={395}
         alt="Picture of Ivan Dalmet"
         sizes="100vw, (min-width: 768px) 261px"
       />
