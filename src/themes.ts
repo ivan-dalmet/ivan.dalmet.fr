@@ -15,6 +15,7 @@ import {
 import { BiSolidTerminal } from "react-icons/bi";
 import { GiPumpkinMask } from "react-icons/gi";
 import { IconArc } from "@/components/IconArc";
+import { IconPeinture } from "@/components/IconPeinture";
 import { IconForkIt } from "@/components/IconForkIt";
 import { IconBearStudio } from "@/components/IconBearStudio";
 import { IconStartUI } from "@/components/IconStartUI";
@@ -57,6 +58,12 @@ export const THEMES = [
     expose: true,
   } as const,
 
+  {
+    name: "peinture",
+    label: "Peinture",
+    icon: IconPeinture,
+    type: "recommended",
+  } as const,
   {
     name: "bearstudio",
     label: "BearStudio",

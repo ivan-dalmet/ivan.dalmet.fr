@@ -20,7 +20,7 @@ export const AchievementsProgress = () => {
     (s) => s.viewAchievementsProgress,
   );
   const hasNewUnlock = values(userAchievements).some(
-    (achievement) => achievement.isNew,
+    (achievement) => achievement?.isNew,
   );
 
   return (

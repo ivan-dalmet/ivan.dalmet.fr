@@ -188,6 +188,54 @@
     }
   }
 
+  .peinture {
+    /* Impressionist coastal oil painting (peinture.app):
+       misty blue sky, slate cliffs, sage greens and warm sand. */
+    --font-sans: var(--font-manrope);
+    --font-heading: var(--font-manrope);
+
+    --color-background: #e9edef;
+    --color-background-from: #c7d5db;
+    --color-background-to: #e7ddca;
+    --color-foreground: #55656e;
+    --color-highlight: #29343b;
+    --color-link: var(--color-highlight);
+    --color-link-decoration: #a7bac4;
+    --color-border: rgba(85, 101, 110, 0.18);
+    --color-accent-text: #5f7468;
+    --color-image-background: #93a9b6;
+    --color-image-accent: rgba(255, 255, 255, 0.4);
+    --color-image-background-from: #aebcc0;
+    --color-image-background-to: #d4c4a3;
+
+    /* Bold name to match peinture.app's confident headings */
+    h1 strong {
+      font-weight: 700;
+    }
+
+    /* Page background: peinture.app's misty light gradient */
+    .gradient-overlay {
+      display: block;
+      background-image: url("/peinture-bg.jpg");
+      background-size: cover;
+      background-position: bottom left;
+      mix-blend-mode: normal;
+    }
+
+    /* Round backdrop behind the portrait: the peinture.app painting */
+    .bg-image-background {
+      background-image: url("/peinture-painting.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Frosted-glass disc behind the portrait so the figure stands
+       out against the busy painting. */
+    .bg-image-accent {
+      @apply backdrop-blur-xl;
+    }
+  }
+
   .romantic-love {
     --color-background: #ffe2ee;
     --color-background-from: #a12b8b;
