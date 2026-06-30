@@ -204,7 +204,7 @@
     --color-border: rgba(85, 101, 110, 0.18);
     --color-accent-text: #5f7468;
     --color-image-background: #93a9b6;
-    --color-image-accent: transparent;
+    --color-image-accent: rgba(255, 255, 255, 0.4);
     --color-image-background-from: #aebcc0;
     --color-image-background-to: #d4c4a3;
 
@@ -222,6 +222,12 @@
       background-image: url("/peinture-painting.jpg");
       background-size: cover;
       background-position: center;
+    }
+
+    /* Frosted-glass disc behind the portrait so the figure stands
+       out against the busy painting. */
+    .bg-image-accent {
+      @apply backdrop-blur-xl;
     }
   }
 
