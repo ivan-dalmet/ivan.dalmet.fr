@@ -208,6 +208,11 @@
     --color-image-background-from: #aebcc0;
     --color-image-background-to: #d4c4a3;
 
+    /* Bold name to match peinture.app's confident headings */
+    h1 strong {
+      font-weight: 700;
+    }
+
     /* Page background: peinture.app's misty light gradient */
     .gradient-overlay {
       display: block;
