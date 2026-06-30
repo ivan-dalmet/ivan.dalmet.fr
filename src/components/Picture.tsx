@@ -4,7 +4,7 @@ import Image from "next/image";
 import pictureSrc from "@/../public/ivan-dalmet.png";
 import santaHatSrc from "@/../public/santa-hat.svg";
 import hallowenHatSrc from "@/../public/halloween-hat.png";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useActiveTheme } from "@/lib/theme";
 import { useStoreAchievements } from "@/components/Achivements/store";
 import {
@@ -18,6 +18,17 @@ export const Picture = () => {
   const achivements = useStoreAchievements((s) => s.achivements);
   const triggerAchievement = useStoreAchievements((s) => s.triggerAchievement);
   const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // If the image is served from cache, its `load` event can fire before
+  // React attaches `onLoad`, so the event is missed. Detect the already
+  // completed image on mount and flip the state ourselves.
+  useEffect(() => {
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, []);
+
   return (
     <div className="relative md:-translate-x-8">
       <div className="absolute left-1/2 top-1/2 aspect-square w-[125%] translate-x-[-49.7%] translate-y-[-39.6%] rounded-full bg-image-accent opacity-20 blur-3xl" />
@@ -61,6 +72,7 @@ export const Picture = () => {
         </CursorProvider>
       )}
       <Image
+        ref={imgRef}
         className="relative"
         priority
         onLoad={() => {
