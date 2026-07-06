@@ -298,6 +298,27 @@
     }
   }
 
+  .aurora {
+    color-scheme: dark;
+    --color-background: #06101f;
+    --color-background-from: #0c3a34;
+    --color-background-to: #2a1450;
+    --color-foreground: #c6f6e4;
+    --color-highlight: #4dffb0;
+    --color-link: var(--color-highlight);
+    --color-link-decoration: rgba(77, 255, 176, 0.5);
+    --color-border: rgba(77, 255, 176, 0.18);
+    --color-accent-text: #d8b4ff;
+    --color-image-background: #0d2f3a;
+    --color-image-accent: #7b5cff;
+    --color-image-background-from: #10493f;
+    --color-image-background-to: #2a1a52;
+
+    .gradient-overlay {
+      display: block;
+    }
+  }
+
   .fork-it {
     --font-heading: var(--font-tomorrow);
     --color-background: #171717;

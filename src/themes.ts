@@ -7,6 +7,7 @@ import {
   LuMonitor,
   LuMoon,
   LuMusic,
+  LuSparkles,
   LuTreePalm,
   LuSnowflake,
   LuSun,
@@ -148,6 +149,12 @@ export const THEMES = [
     name: "funky-neon",
     label: "Funky Neon",
     icon: LuMusic,
+    type: "other",
+  } as const,
+  {
+    name: "aurora",
+    label: "Aurora Borealis",
+    icon: LuSparkles,
     type: "other",
   } as const,
   {
