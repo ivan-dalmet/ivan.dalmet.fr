@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { GiPumpkinMask } from "react-icons/gi";
+import { GiPumpkinMask, GiSnake } from "react-icons/gi";
 import { LuCandyCane, LuCommand, LuHeart, LuUserPlus } from "react-icons/lu";
 import { MdBlind } from "react-icons/md";
 import { SiHackaday } from "react-icons/si";
@@ -35,6 +35,12 @@ export const allAchievements = {
     icon: <BiSolidTerminal />,
     title: (payload) => `Hello ${payload?.name}! Nice to meet you!`,
     hint: "myNameIs()",
+    displayIfNotUnlocked: true,
+  },
+  consoleGame: {
+    icon: <GiSnake />,
+    title: () => "Snake Charmer 🐍",
+    hint: "snake()",
     displayIfNotUnlocked: true,
   },
   cmdk: {
