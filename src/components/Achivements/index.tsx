@@ -9,6 +9,7 @@ import { Achievement } from "./Achivement";
 import { useActiveTheme } from "@/lib/theme";
 import { z } from "zod";
 import { useSecretCode } from "@/lib/use-secret-code";
+import { playConsoleGame } from "@/components/ConsoleGame";
 
 export const Achievements = () => {
   const activeTheme = useActiveTheme();
@@ -38,6 +39,7 @@ export const Achievements = () => {
   useEffect(() => {
     init();
     console.log("Did you tried 'H4CK3R'?");
+    console.log("🐍 sssss...");
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).myNameIs = (name?: string) => {
       const nameParsed = z.string().trim().min(1).safeParse(name);
@@ -46,6 +48,11 @@ export const Achievements = () => {
         return;
       }
       triggerAchievement("consoleFunction", { name: nameParsed.data });
+    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).snake = () => {
+      playConsoleGame({ onWin: () => triggerAchievement("consoleGame") });
+      return "🐍 Click on the page, then use the arrow keys!";
     };
 
     const timeout = setTimeout(() => {
